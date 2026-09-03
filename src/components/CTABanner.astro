@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  variant?: 'default' | 'compact';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<section class:list={['bg-sage-800 text-white', variant === 'compact' ? 'py-12' : 'section-padding']}>
+  <div class="container-narrow text-center">
+    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Ready to Feel Better?</h2>
+    <p class="text-sage-200 text-lg mb-8 max-w-2xl mx-auto">
+      Book your appointment today. Call our Toledo office or send us a message—we are accepting new patients.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href={`tel:${site.phoneTel}`}
+        class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        Book Appointment — {site.phone}
+      </a>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+      >
+        Contact Form
+      </a>
+    </div>
+  </div>
+</section>

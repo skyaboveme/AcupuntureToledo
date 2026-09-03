@@ -1,0 +1,29 @@
+---
+interface Props {
+  name: string;
+  role?: string;
+  alt: string;
+  class?: string;
+}
+
+const { name, role, alt, class: className = '' } = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative overflow-hidden rounded-2xl bg-gradient-to-br from-sage-100 to-sage-200 aspect-[4/3] flex items-center justify-center',
+    className,
+  ]}
+  role="img"
+  aria-label={alt}
+>
+  <svg class="w-24 h-24 text-sage-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5" />
+    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+  <div class="absolute bottom-0 left-0 right-0 bg-sage-800/80 text-white p-4 text-center">
+    <p class="font-semibold text-sm">{name}</p>
+    {role && <p class="text-sage-200 text-xs mt-0.5">{role}</p>}
+    <p class="text-sage-300 text-xs mt-1 italic">Photo placeholder — replace before launch</p>
+  </div>
+</div>

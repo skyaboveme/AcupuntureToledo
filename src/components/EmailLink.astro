@@ -1,0 +1,16 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<a
+  href={`mailto:${site.email}`}
+  class:list={['text-teal-700 hover:text-teal-600 transition-colors', className]}
+>
+  {site.email}
+</a>

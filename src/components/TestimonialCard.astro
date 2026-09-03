@@ -1,0 +1,18 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+}
+
+const { quote, author } = Astro.props;
+---
+
+<blockquote class="bg-white rounded-2xl p-6 md:p-8 border border-sage-200 shadow-sm h-full flex flex-col">
+  <svg class="h-8 w-8 text-sage-300 mb-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+  </svg>
+  <p class="text-warm-700 leading-relaxed flex-grow">&ldquo;{quote}&rdquo;</p>
+  <footer class="mt-6 pt-4 border-t border-sage-100">
+    <cite class="not-italic font-semibold text-sage-800">— {author}</cite>
+  </footer>
+</blockquote>

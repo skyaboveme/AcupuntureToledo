@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Button from '../../components/Button.astro';
+import { services } from '../../data/services';
+import { buildPageSchema } from '../../lib/schema';
+import { seo } from '../../lib/seo';
+
+const pageSeo = seo({
+  title: 'Holistic Health Services in Toledo, OH',
+  description:
+    'Chiropractic, acupuncture, massage therapy, cupping, fertility support, pregnancy care, cold laser therapy, and more at Toledo Holistic Healthcare.',
+  path: '/services',
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/services',
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+  ],
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path="/services"
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+  ]}
+>
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
+    <div class="container-narrow">
+      <h1 class="text-4xl md:text-5xl font-serif mb-6">Our Services</h1>
+      <p class="text-lg text-warm-700 leading-relaxed max-w-3xl">
+        Toledo Holistic Healthcare offers a comprehensive range of holistic health services. Each treatment is tailored to your individual needs, combining Eastern healing wisdom with modern clinical expertise.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+          services.map((service) => (
+            <article class="rounded-2xl border border-sage-200 p-8 hover:border-teal-400 hover:shadow-md transition-all bg-cream-50">
+              <h2 class="text-2xl font-serif text-sage-800 mb-3">
+                <a href={`/services/${service.slug}`} class="hover:text-teal-700 transition-colors">
+                  {service.name}
+                </a>
+              </h2>
+              <p class="text-warm-700 leading-relaxed mb-4">{service.shortDescription}</p>
+              <ul class="space-y-1 mb-6">
+                {service.benefits.slice(0, 3).map((benefit) => (
+                  <li class="text-sm text-sage-700 flex items-start gap-2">
+                    <span class="text-teal-600 mt-0.5" aria-hidden="true">✓</span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+              <Button href={`/services/${service.slug}`} variant="outline" size="sm">
+                Learn More
+              </Button>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

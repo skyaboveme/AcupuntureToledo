@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import ServiceImage from '../../components/ServiceImage.astro';
+import Button from '../../components/Button.astro';
+import { services } from '../../data/services';
+import { conditions } from '../../data/conditions';
+import { buildPageSchema } from '../../lib/schema';
+import { seo } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+const pageSeo = seo({
+  title: `${service.name} in Toledo, OH`,
+  description: `${service.shortDescription} Available at Toledo Holistic Healthcare. Call 419-472-7055 to book.`,
+  path: `/services/${service.slug}`,
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: `/services/${service.slug}`,
+  service: {
+    name: service.name,
+    description: service.description,
+    slug: service.slug,
+  },
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: service.name, path: `/services/${service.slug}` },
+  ],
+});
+
+const relatedConditions = conditions.filter((c) =>
+  service.relatedConditions.includes(c.slug)
+);
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path={`/services/${service.slug}`}
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: service.name, path: `/services/${service.slug}` },
+  ]}
+>
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
+    <div class="container-narrow">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-serif mb-6">{service.name}</h1>
+          <p class="text-lg text-warm-700 leading-relaxed">{service.shortDescription}</p>
+        </div>
+        <ServiceImage title={service.name} alt={`Illustration for ${service.name} at Toledo Holistic Healthcare`} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-8">
+          <div>
+            <h2 class="text-2xl font-serif mb-4">About {service.name}</h2>
+            {service.description.split('\n\n').map((p) => (
+              <p class="text-warm-700 leading-relaxed mb-4">{p}</p>
+            ))}
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-serif mb-4">What to Expect</h2>
+            <p class="text-warm-700 leading-relaxed">{service.whatToExpect}</p>
+          </div>
+        </div>
+
+        <aside class="space-y-8">
+          <div class="bg-sage-50 rounded-2xl p-6 border border-sage-200">
+            <h3 class="font-serif text-lg mb-4">Benefits</h3>
+            <ul class="space-y-2">
+              {service.benefits.map((benefit) => (
+                <li class="text-sm text-warm-700 flex items-start gap-2">
+                  <span class="text-teal-600 shrink-0" aria-hidden="true">✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {
+            relatedConditions.length > 0 && (
+              <div class="bg-cream-100 rounded-2xl p-6 border border-sage-200">
+                <h3 class="font-serif text-lg mb-4">Related Conditions</h3>
+                <ul class="space-y-2">
+                  {relatedConditions.map((condition) => (
+                    <li>
+                      <a
+                        href={`/conditions#${condition.slug}`}
+                        class="text-teal-700 hover:text-teal-600 text-sm font-medium"
+                      >
+                        {condition.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+
+          <Button href="/contact" class="w-full text-center">Book Appointment</Button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

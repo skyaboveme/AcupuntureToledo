@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Button from '../components/Button.astro';
+import { site } from '../data/site';
+import { services } from '../data/services';
+import { testimonials } from '../data/testimonials';
+import { faqs } from '../data/faq';
+import { buildPageSchema } from '../lib/schema';
+import { seo } from '../lib/seo';
+
+const pageSeo = seo({
+  title: 'Chiropractic & Acupuncture in Toledo, OH',
+  description:
+    'Toledo Holistic Healthcare offers holistic chiropractic, acupuncture, massage, and wellness care in Toledo, Ohio. Whole-body approach for all ages. Book today: 419-472-7055.',
+  path: '/',
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/',
+  includePhysician: true,
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path="/"
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-sage-800 via-sage-700 to-teal-800 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <circle cx="80" cy="20" r="40" fill="white" />
+        <circle cx="20" cy="80" r="30" fill="white" />
+      </svg>
+    </div>
+    <div class="container-narrow relative section-padding">
+      <div class="max-w-3xl">
+        <p class="text-sage-200 font-medium mb-4 tracking-wide uppercase text-sm">Toledo &amp; NW Ohio</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
+          {site.tagline}
+        </h1>
+        <p class="text-lg md:text-xl text-sage-100 leading-relaxed mb-8 max-w-2xl">
+          Holistic, patient-centered chiropractic, acupuncture, massage, and wellness care—blending Eastern healing techniques with modern practice for the whole person.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href={`tel:${site.phoneTel}`}
+            class="inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+          >
+            Book Appointment — {site.phone}
+          </a>
+          <Button href="/services" variant="outline" size="lg" class="!border-white/40 !text-white hover:!bg-white/10 hover:!text-white">
+            Our Services
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Our Services</h2>
+        <p class="text-warm-700 text-lg max-w-2xl mx-auto">
+          Comprehensive holistic care tailored to your needs—from chiropractic and acupuncture to massage, fertility support, and advanced therapies.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          services.slice(0, 6).map((service) => (
+            <a
+              href={`/services/${service.slug}`}
+              class="group p-6 rounded-2xl border border-sage-200 hover:border-teal-400 hover:shadow-md transition-all bg-cream-50"
+            >
+              <h3 class="text-xl font-serif text-sage-800 group-hover:text-teal-700 transition-colors mb-2">
+                {service.name}
+              </h3>
+              <p class="text-warm-700 text-sm leading-relaxed">{service.shortDescription}</p>
+              <span class="inline-block mt-4 text-teal-600 font-semibold text-sm group-hover:underline">
+                Learn more →
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="text-center mt-10">
+        <Button href="/services">View All Services</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section-padding bg-sage-50">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Why Choose Us</h2>
+        <p class="text-warm-700 text-lg max-w-2xl mx-auto">
+          At Toledo Holistic Healthcare, we put your whole-person wellness first.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          site.differentiators.map((item) => (
+            <div class="bg-white rounded-2xl p-6 border border-sage-200">
+              <h3 class="text-lg font-serif text-sage-800 mb-3">{item.title}</h3>
+              <p class="text-warm-700 text-sm leading-relaxed">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">What Our Patients Say</h2>
+        <p class="text-warm-700 text-lg">Real reviews from patients in Toledo and NW Ohio.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.slice(0, 3).map((t) => <TestimonialCard quote={t.quote} author={t.author} />)}
+      </div>
+      <div class="text-center mt-10">
+        <Button href="/testimonials" variant="outline">Read All Testimonials</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Preview -->
+  <section class="section-padding bg-cream-100">
+    <div class="container-narrow max-w-3xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Frequently Asked Questions</h2>
+      </div>
+      <FAQAccordion items={[...faqs]} limit={3} />
+      <div class="text-center mt-8">
+        <Button href="/faq" variant="outline">View All FAQs</Button>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { faqs } from '../data/faq';
+import { buildPageSchema } from '../lib/schema';
+import { seo } from '../lib/seo';
+
+const pageSeo = seo({
+  title: 'FAQ — Toledo Holistic Healthcare',
+  description:
+    'Frequently asked questions about Toledo Holistic Healthcare: new patients, insurance, ages served, services, and how to book an appointment in Toledo, OH.',
+  path: '/faq',
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/faq',
+  faqs: [...faqs],
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'FAQ', path: '/faq' },
+  ],
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path="/faq"
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'FAQ', path: '/faq' },
+  ]}
+>
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
+    <div class="container-narrow text-center">
+      <h1 class="text-4xl md:text-5xl font-serif mb-6">Frequently Asked Questions</h1>
+      <p class="text-lg text-warm-700 leading-relaxed max-w-2xl mx-auto">
+        Find answers to common questions about our practice, services, insurance, and scheduling.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow max-w-3xl">
+      <FAQAccordion items={[...faqs]} />
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

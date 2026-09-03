@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PhoneLink from '../components/PhoneLink.astro';
+import EmailLink from '../components/EmailLink.astro';
+import { site } from '../data/site';
+import { buildPageSchema } from '../lib/schema';
+import { seo } from '../lib/seo';
+
+const pageSeo = seo({
+  title: 'Contact & Book Appointment — Toledo Holistic Healthcare',
+  description:
+    'Contact Toledo Holistic Healthcare at 2828 W Central Ave, Suite 1, Toledo, OH 43606. Call 419-472-7055 or email faq@acupuncturetoledo.com to book.',
+  path: '/contact',
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/contact',
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ],
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path="/contact"
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ]}
+>
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
+    <div class="container-narrow">
+      <h1 class="text-4xl md:text-5xl font-serif mb-6">Contact Us</h1>
+      <p class="text-lg text-warm-700 leading-relaxed max-w-3xl">
+        Ready to start your wellness journey? Call, email, or fill out the form below. We are accepting new patients and look forward to hearing from you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <ContactForm />
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-sage-50 rounded-2xl p-8 border border-sage-200">
+            <h2 class="text-xl font-serif mb-6">Get in Touch</h2>
+            <dl class="space-y-4">
+              <div>
+                <dt class="text-sm font-semibold text-sage-600 uppercase tracking-wide">Phone</dt>
+                <dd class="mt-1">
+                  <PhoneLink class="text-lg" />
+                </dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold text-sage-600 uppercase tracking-wide">Email</dt>
+                <dd class="mt-1">
+                  <EmailLink />
+                </dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold text-sage-600 uppercase tracking-wide">Address</dt>
+                <dd class="mt-1 text-warm-700">
+                  <address class="not-italic">
+                    {site.address.street}<br />
+                    {site.address.city}, {site.address.state} {site.address.zip}
+                  </address>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="bg-cream-100 rounded-2xl p-8 border border-sage-200">
+            <h2 class="text-xl font-serif mb-6">Office Hours</h2>
+            <ul class="space-y-2">
+              {
+                site.hours.map((h) => (
+                  <li class="flex justify-between text-warm-700">
+                    <span class="font-medium">{h.day}</span>
+                    <span>{h.hours}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="rounded-2xl overflow-hidden border border-sage-200">
+            <div
+              class="bg-sage-100 aspect-[4/3] flex items-center justify-center p-8 text-center"
+              role="img"
+              aria-label="Map showing location of Toledo Holistic Healthcare at 2828 W Central Ave, Toledo, OH"
+            >
+              <div>
+                <svg class="w-12 h-12 mx-auto text-sage-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p class="text-sage-700 font-medium mb-2">Map Embed Placeholder</p>
+                <p class="text-sm text-sage-600 mb-4">
+                  TODO: Replace with Google Maps embed for<br />
+                  {site.address.full}
+                </p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.full)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-teal-700 hover:text-teal-600 font-semibold text-sm"
+                >
+                  Open in Google Maps →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

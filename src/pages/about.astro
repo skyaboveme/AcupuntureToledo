@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlaceholderImage from '../components/PlaceholderImage.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { team } from '../data/team';
+import { site } from '../data/site';
+import { buildPageSchema } from '../lib/schema';
+import { seo } from '../lib/seo';
+
+const pageSeo = seo({
+  title: 'About Our Team — Chiropractic & Acupuncture in Toledo',
+  description:
+    'Meet Dr. Jared Mainous, DC, Aleshia (LMT), and Lori C. at Toledo Holistic Healthcare. Experienced, licensed practitioners serving Toledo and NW Ohio.',
+  path: '/about',
+});
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/about',
+  includePhysician: true,
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+  ],
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path="/about"
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+  ]}
+>
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
+    <div class="container-narrow">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-serif mb-6">About Toledo Holistic Healthcare</h1>
+        <p class="text-lg text-warm-700 leading-relaxed mb-6">
+          {site.name} is a holistic wellness clinic in Toledo, Ohio, dedicated to providing patient-centered care that addresses the whole person—mind, body, and spirit.
+        </p>
+        <p class="text-warm-700 leading-relaxed mb-6">
+          We combine chiropractic care, acupuncture, massage therapy, and advanced healing modalities to help patients throughout NW Ohio achieve lasting wellness. Our approach blends time-tested Eastern healing techniques with modern clinical practice.
+        </p>
+        <p class="text-warm-700 leading-relaxed">
+          Whether you are seeking relief from pain, support during pregnancy, fertility care, or wellness maintenance for your entire family, our experienced team is here to guide you—with a commitment to finding the right care, even if that means a trusted referral to another provider.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Meet the Team</h2>
+      <div class="space-y-16">
+        {
+          team.map((member, index) => (
+            <article class:list={['grid grid-cols-1 lg:grid-cols-2 gap-10 items-start', index % 2 === 1 && 'lg:flex-row-reverse']}>
+              <div class:list={[index % 2 === 1 && 'lg:order-2']}>
+                <PlaceholderImage
+                  name={member.name}
+                  role={member.role}
+                  alt={member.imageAlt}
+                />
+              </div>
+              <div class:list={[index % 2 === 1 && 'lg:order-1']}>
+                <h3 class="text-2xl md:text-3xl font-serif mb-2">{member.name}</h3>
+                <p class="text-teal-700 font-semibold mb-4">{member.role}</p>
+                <ul class="flex flex-wrap gap-2 mb-6">
+                  {member.credentials.map((cred) => (
+                    <li class="text-xs bg-sage-100 text-sage-700 px-3 py-1 rounded-full">{cred}</li>
+                  ))}
+                </ul>
+                {member.bio.split('\n\n').map((paragraph) => (
+                  <p class="text-warm-700 leading-relaxed mb-4">{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>
