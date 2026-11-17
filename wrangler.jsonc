@@ -10,9 +10,5 @@
   },
   "observability": {
     "enabled": true
-  },
-  "routes": [
-    { "pattern": "acupuncturetoledo.com", "custom_domain": true },
-    { "pattern": "www.acupuncturetoledo.com", "custom_domain": true }
-  ]
+  }
 }
