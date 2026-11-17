@@ -10,13 +10,11 @@ Lead practitioner: Dr. Jared Mainous, DC (Doctor of Chiropractic) — performs c
 
 Team:
 - Dr. Jared Mainous, DC — Chiropractor / Acupuncturist
-- Aleshia — Licensed Massage Therapist (owner of 10 Eleven Massage)
 - Lori C. — Office Administrator
 
 ## Services
 
 - Chiropractic
-- Massage Therapy
 - Acupuncture
 - Cupping
 - Fertility (chiropractic support for reproductive health)
@@ -76,7 +74,6 @@ Yes, accepting new patients. Care provided for ALL ages, from newborn babies to 
 
 - https://acupuncturetoledo.com/services/chiropractic
 - https://acupuncturetoledo.com/services/acupuncture
-- https://acupuncturetoledo.com/services/massage
 - https://acupuncturetoledo.com/services/cupping
 - https://acupuncturetoledo.com/services/fertility
 - https://acupuncturetoledo.com/services/pregnancy

@@ -29,7 +29,8 @@ export default defineConfig({
     '/billing.php': '/billing',
     '/chiropractic.php': '/services/chiropractic',
     '/chiropractor.php': '/services/chiropractic',
-    '/massage.php': '/services/massage',
+    '/massage.php': '/services',
+    '/services/massage': '/services',
     '/acupuncture.php': '/services/acupuncture',
     '/cupping.php': '/services/cupping',
     '/electrical-muscle-stimulation.php': '/services/electrical-muscle-stimulation',
@@ -37,6 +38,6 @@ export default defineConfig({
     '/cold-laser-therapy.php': '/services/cold-laser-therapy',
     '/pregnancy.php': '/services/pregnancy',
     '/fertility.php': '/services/fertility',
-    '/services/massage-therapy': '/services/massage',
+    '/services/massage-therapy': '/services',
   },
 });

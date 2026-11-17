@@ -42,25 +42,6 @@ This Eastern healing practice complements chiropractic care beautifully, address
     relatedConditions: ['back-pain', 'neck-pain', 'headaches', 'fertility'],
   },
   {
-    slug: 'massage',
-    name: 'Massage Therapy',
-    image: '/images/1000-chiro-100.webp',
-    shortDescription:
-      'In-house therapeutic massage blending relaxation with targeted deep tissue work by a licensed massage therapist.',
-    description: `Aleshia, our Licensed Massage Therapist and owner of 10 Eleven Massage, provides in-house massage therapy at Toledo Holistic Healthcare. Her sessions blend relaxation techniques with targeted deep tissue work to release muscle tension, reduce stress, and support your chiropractic and acupuncture care.
-
-Massage therapy is an excellent complement to structural adjustments, helping soft tissues heal and maintaining the benefits of your chiropractic visits. Whether you need relief from chronic tension, injury recovery support, or stress management, our massage services are tailored to your needs.`,
-    whatToExpect: `Your massage session begins with a brief consultation to understand your areas of concern. Aleshia will customize pressure and techniques—from gentle relaxation to focused deep tissue work—based on your preferences and treatment goals.`,
-    benefits: [
-      'Muscle tension relief',
-      'Improved circulation',
-      'Stress reduction',
-      'Enhanced recovery from adjustments',
-      'Targeted deep tissue work',
-    ],
-    relatedConditions: ['back-pain', 'neck-pain', 'sports-injuries', 'work-injuries'],
-  },
-  {
     slug: 'cupping',
     name: 'Cupping',
     image: '/images/1000-chiro-039.webp',

@@ -14,20 +14,6 @@ Whether you are seeking relief from pain, support during pregnancy or postpartum
     imageAlt: 'TODO: Replace with professional photo of Dr. Jared Mainous, DC',
   },
   {
-    name: 'Aleshia Deiners',
-    role: 'Licensed Massage Therapist',
-    slug: 'aleshia',
-    isPrimary: false,
-    image: '/images/aleshia.webp',
-    bio: `Aleshia Deiners is a Licensed Massage Therapist offering in-house massage therapy at Toledo Holistic Healthcare. She blends relaxation techniques with targeted deep tissue work to address muscle tension, stress, and chronic pain.
-
-As the owner of 10 Eleven Massage, Aleshia is licensed by the State Medical Board of Ohio and completed 750 hours of massage and bodywork training at Orion Institute. Her sessions complement chiropractic and acupuncture care, helping patients release tension and support their overall healing process.
-
-She enjoys music, plants, and spending time with her family. Whether you're seeking relaxation or deep, targeted work, Aleshia has you covered.`,
-    credentials: ['Licensed Massage Therapist', 'Owner, 10 Eleven Massage', 'State Medical Board of Ohio'],
-    imageAlt: 'Aleshia Deiners, Licensed Massage Therapist at Toledo Holistic Healthcare',
-  },
-  {
     name: 'Lori C.',
     role: 'Office Administrator',
     slug: 'lori',

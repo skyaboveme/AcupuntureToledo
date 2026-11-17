@@ -3,7 +3,7 @@ export const site = {
   legalName: 'Toledo Holistic Healthcare LLC',
   tagline: 'We Take A Whole Body Approach To Your Healthcare',
   description:
-    'Holistic, patient-centered chiropractic, acupuncture, massage, and wellness care in Toledo, Ohio. Serving NW Ohio with a whole-person approach blending Eastern healing with modern practice.',
+    'Holistic, patient-centered chiropractic, acupuncture, and wellness care in Toledo, Ohio. Serving NW Ohio with a whole-person approach blending Eastern healing with modern practice.',
   url: 'https://acupuncturetoledo.com',
   phone: '419-472-7055',
   phoneTel: '+14194727055',
@@ -41,7 +41,7 @@ export const site = {
     {
       title: 'Experienced, Licensed Practitioners',
       description:
-        'Our team includes a Doctor of Chiropractic, licensed acupuncturist, licensed massage therapist, and dedicated office administrator.',
+        'Our team includes a Doctor of Chiropractic, licensed acupuncturist, and dedicated office administrator.',
     },
     {
       title: 'Care for All Ages',

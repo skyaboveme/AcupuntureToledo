@@ -64,7 +64,7 @@ Legacy `.php` URLs from the previous site redirect to the matching new routes.
 |-------------|---------|
 | `public/images/jared-mainous.webp` | About page — Dr. Jared Mainous (still a placeholder) |
 
-Aleshia, Lori, the office, logo, and service photos are already in `public/images/`. Set `team[0].image` in `src/data/team.ts` once Dr. Jared's photo is added.
+Lori, the office, logo, and service photos are already in `public/images/`. Set `team[0].image` in `src/data/team.ts` once Dr. Jared's photo is added.
 
 ### 2. Wire Up Contact Form
 

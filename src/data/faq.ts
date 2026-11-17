@@ -21,7 +21,7 @@ export const faqs = [
   {
     question: 'What services do you offer?',
     answer:
-      'We offer chiropractic care, acupuncture, massage therapy, cupping, fertility support, prenatal care, electrical muscle stimulation, cold laser therapy, and electro-meridian imaging—all delivered with a holistic, whole-body approach.',
+      'We offer chiropractic care, acupuncture, cupping, fertility support, prenatal care, electrical muscle stimulation, cold laser therapy, and electro-meridian imaging—all delivered with a holistic, whole-body approach.',
   },
   {
     question: 'Where are you located?',
