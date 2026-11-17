@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABanner from '../../components/CTABanner.astro';
+import PageHero from '../../components/PageHero.astro';
 import ServiceImage from '../../components/ServiceImage.astro';
 import Button from '../../components/Button.astro';
 import { services } from '../../data/services';
@@ -54,26 +55,19 @@ const relatedConditions = conditions.filter((c) =>
     { name: service.name, path: `/services/${service.slug}` },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-4xl md:text-5xl font-serif mb-6">{service.name}</h1>
-          <p class="text-lg text-warm-700 leading-relaxed">{service.shortDescription}</p>
-        </div>
-        <ServiceImage
-          title={service.name}
-          alt={`${service.name} at Toledo Holistic Healthcare`}
-          src={service.image}
-        />
-      </div>
-    </div>
-  </section>
+  <PageHero title={service.name} image={service.heroImage}>
+    <p>{service.shortDescription}</p>
+  </PageHero>
 
   <section class="section-padding bg-white">
     <div class="container-narrow">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2 space-y-8">
+          <ServiceImage
+            title={service.name}
+            alt={`${service.name} at Toledo Holistic Healthcare`}
+            src={service.image}
+          />
           <div>
             <h2 class="text-2xl font-serif mb-4">About {service.name}</h2>
             {service.description.split('\n\n').map((p) => (

@@ -4,14 +4,14 @@ export const team = [
     role: 'Chiropractor / Acupuncturist',
     slug: 'jared-mainous',
     isPrimary: true,
-    image: '',
+    image: '/images/fam-002.webp',
     bio: `Dr. Jared Mainous, DC, is the lead practitioner at Toledo Holistic Healthcare. He performs chiropractic adjustments and acupuncture, blending Eastern healing techniques with modern clinical practice.
 
 Patients consistently describe Dr. Jared as gentle, attentive, and thorough—a family-friendly provider who takes time to understand your body and your concerns. He makes sure you are comfortable with everything he does before proceeding, and focuses on healing rather than quick fixes.
 
 Whether you are seeking relief from pain, support during pregnancy or postpartum, fertility care, or wellness maintenance for your whole family, Dr. Jared brings a patient-centered, holistic approach to every visit.`,
     credentials: ['Doctor of Chiropractic (DC)', 'Acupuncture'],
-    imageAlt: 'TODO: Replace with professional photo of Dr. Jared Mainous, DC',
+    imageAlt: 'Dr. Jared Mainous, DC, with his family',
   },
   {
     name: 'Lori C.',

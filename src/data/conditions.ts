@@ -2,6 +2,7 @@ export const conditions = [
   {
     slug: 'back-pain',
     name: 'Back Pain',
+    image: '/images/1000-chiro-056.webp',
     shortDescription:
       'Caused by poor posture, spinal misalignment, or injury; chiropractic relieves discomfort and restores mobility naturally.',
     description: `Back pain is one of the most common reasons patients visit Toledo Holistic Healthcare. Whether your discomfort stems from poor posture, spinal misalignment, a workplace injury, or everyday strain, chronic back pain can limit your mobility and quality of life.
@@ -14,6 +15,7 @@ We also integrate complementary therapies such as acupuncture and cold laser the
   {
     slug: 'neck-pain',
     name: 'Neck Pain',
+    image: '/images/1000-chiro-059.webp',
     shortDescription:
       'Often from stress, poor posture, or whiplash; adjustments restore function and relieve tension.',
     description: `Neck pain frequently results from stress, poor posture, prolonged desk work, or whiplash from auto accidents. Tension in the cervical spine can radiate into your shoulders, cause headaches, and restrict your range of motion.
@@ -26,6 +28,7 @@ If you are in the Toledo area and struggling with neck pain, we can help you reg
   {
     slug: 'headaches',
     name: 'Headaches',
+    image: '/images/1000-chiro-069.webp',
     shortDescription:
       'Tension headaches and migraines from misaligned vertebrae or muscle tension; drug-free relief.',
     description: `Tension headaches and migraines are often linked to misaligned vertebrae, muscle tension in the neck and shoulders, or nervous system dysfunction. Rather than relying on pain medication alone, many patients find lasting relief through chiropractic care.
@@ -36,6 +39,7 @@ At Toledo Holistic Healthcare, we assess your spine, posture, and lifestyle fact
   {
     slug: 'auto-injuries',
     name: 'Auto Injuries',
+    image: '/images/1000-chiro-068.webp',
     shortDescription:
       'Whiplash, spinal misalignment, and muscle strain after car accidents; adjustments speed recovery.',
     description: `Car accidents can cause whiplash, spinal misalignment, muscle strain, and lingering pain that may not appear until days or weeks later. Prompt chiropractic care after an auto injury can speed recovery and prevent chronic issues from developing.
@@ -46,6 +50,7 @@ We work with most private insurance for car accidents and coordinate care to doc
   {
     slug: 'sports-injuries',
     name: 'Sports Injuries',
+    image: '/images/1000-chiro-074.webp',
     shortDescription:
       'Joint pain, muscle strains, and ligament injuries; aids pain relief and performance recovery.',
     description: `Whether you are a weekend warrior or a competitive athlete in NW Ohio, sports injuries like joint pain, muscle strains, and ligament damage can sideline you from the activities you love.
@@ -56,6 +61,7 @@ Our holistic approach combines chiropractic adjustments, soft tissue therapies, 
   {
     slug: 'work-injuries',
     name: 'Work Injuries',
+    image: '/images/1000-chiro-071.webp',
     shortDescription:
       'Repetitive strain and workplace accidents leading to chronic pain; promotes healing and mobility.',
     description: `Repetitive strain injuries, lifting accidents, and workplace ergonomics issues are common sources of chronic pain for Toledo workers. We treat work-related injuries with a focus on healing, mobility, and preventing re-injury.
@@ -66,6 +72,7 @@ We work with workers compensation insurance and develop care plans that address 
   {
     slug: 'fertility',
     name: 'Fertility',
+    image: '/images/1000-chiro-035.webp',
     shortDescription:
       'Adjustments help improve nervous system function, key to reproductive health.',
     description: `Chiropractic care can play a supportive role in reproductive health by optimizing nervous system function—a key factor in fertility. Spinal misalignments may interfere with the communication between your brain and reproductive organs.

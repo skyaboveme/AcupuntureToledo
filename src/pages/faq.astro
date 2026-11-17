@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
+import PageHero from '../components/PageHero.astro';
 import CTABanner from '../components/CTABanner.astro';
 import { faqs } from '../data/faq';
 import { buildPageSchema } from '../lib/schema';
@@ -34,14 +35,11 @@ const schema = buildPageSchema({
     { name: 'FAQ', path: '/faq' },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow text-center">
-      <h1 class="text-4xl md:text-5xl font-serif mb-6">Frequently Asked Questions</h1>
-      <p class="text-lg text-warm-700 leading-relaxed max-w-2xl mx-auto">
-        Find answers to common questions about our practice, services, insurance, and scheduling.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Frequently Asked Questions" image="/images/1920-chiro-023.webp">
+    <p>
+      Find answers to common questions about our practice, services, insurance, and scheduling.
+    </p>
+  </PageHero>
 
   <section class="section-padding bg-white">
     <div class="container-narrow max-w-3xl">

@@ -58,13 +58,9 @@ Legacy `.php` URLs from the previous site redirect to the matching new routes.
 
 ## Before Launch Checklist
 
-### 1. Remaining photos
+### 1. Photos
 
-| File to add | Used in |
-|-------------|---------|
-| `public/images/jared-mainous.webp` | About page — Dr. Jared Mainous (still a placeholder) |
-
-Lori, the office, logo, and service photos are already in `public/images/`. Set `team[0].image` in `src/data/team.ts` once Dr. Jared's photo is added.
+Clinic photos from the previous site are in `public/images/` and used on home, about, services, conditions, locations, contact, billing, FAQ, and testimonials. Dr. Jared's family photos (`fam-002.webp`, `fam-003.webp`) stand in until a dedicated headshot is added.
 
 ### 2. Wire Up Contact Form
 
@@ -82,7 +78,7 @@ Change `FORM_ACTION` in `ContactForm.astro` from `'#'` to your endpoint URL.
 - **Insurance panel list** — general statement only; no specific carrier list available
 - **Pricing** — not provided; no fee schedule included
 - **Social profiles** — no verified social links; omitted from schema `sameAs`
-- **Dr. Jared photo** — not in the previous image set
+- **Dr. Jared headshot** — family photos from the previous site are used until a dedicated headshot is added
 
 ## SEO & Structured Data
 

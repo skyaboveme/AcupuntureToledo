@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site';
 import { buildPageSchema } from '../lib/schema';
 import { seo } from '../lib/seo';
@@ -32,18 +33,24 @@ const schema = buildPageSchema({
     { name: 'Insurance & Billing', path: '/billing' },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow">
-      <h1 class="text-4xl md:text-5xl font-serif mb-6">Insurance & Billing</h1>
-      <p class="text-lg text-warm-700 leading-relaxed max-w-3xl">
-        We work with most insurances including private insurance for car accidents and workers compensation. We work closely with Veteran's Affairs to ensure veterans get the care they deserve. We also provide a very reasonable fee base in the absence of coverage.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Insurance & Billing" image="/images/1920-chiro-040.webp">
+    <p>
+      We work with most insurances including private insurance for car accidents and workers compensation. We work closely with Veteran's Affairs to ensure veterans get the care they deserve. We also provide a very reasonable fee base in the absence of coverage.
+    </p>
+  </PageHero>
 
   <section class="section-padding bg-white">
     <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div>
+        <figure class="overflow-hidden rounded-2xl mb-8">
+          <img
+            src="/images/1000-chiro-015.webp"
+            alt="Patient care and billing support at Toledo Holistic Healthcare"
+            width="1000"
+            height="750"
+            class="w-full aspect-[16/10] object-cover"
+          />
+        </figure>
         <h2 class="text-2xl font-serif mb-4">What we can help with</h2>
         <p class="text-warm-700 leading-relaxed mb-4">
           Lori C., our office administrator, manages scheduling and insurance support. Patients often mention that she does everything possible to work with their schedule and insurance questions.

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlaceholderImage from '../components/PlaceholderImage.astro';
+import PageHero from '../components/PageHero.astro';
 import CTABanner from '../components/CTABanner.astro';
 import { team } from '../data/team';
 import { site } from '../data/site';
@@ -35,14 +36,25 @@ const schema = buildPageSchema({
     { name: 'About', path: '/about' },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-serif mb-6">About Toledo Holistic Healthcare</h1>
+  <PageHero title="About Toledo Holistic Healthcare" image="/images/fam-003.webp" alt="Dr. Jared Mainous, DC, and his family">
+    <p>
+      {site.name} is a holistic wellness clinic in Toledo, Ohio, dedicated to patient-centered care for the whole person—mind, body, and spirit.
+    </p>
+  </PageHero>
+
+  <section class="section-padding bg-cream-50">
+    <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <figure class="overflow-hidden rounded-2xl">
+        <img
+          src="/images/fam-002.webp"
+          alt="Dr. Jared Mainous, DC, with his family"
+          width="1000"
+          height="1000"
+          class="w-full object-cover"
+        />
+      </figure>
+      <div>
         <p class="text-lg text-warm-700 leading-relaxed mb-6">
-          {site.name} is a holistic wellness clinic in Toledo, Ohio, dedicated to providing patient-centered care that addresses the whole person—mind, body, and spirit.
-        </p>
-        <p class="text-warm-700 leading-relaxed mb-6">
           We combine chiropractic care, acupuncture, and advanced healing modalities to help patients throughout NW Ohio achieve lasting wellness. Our approach blends time-tested Eastern healing techniques with modern clinical practice.
         </p>
         <p class="text-warm-700 leading-relaxed">

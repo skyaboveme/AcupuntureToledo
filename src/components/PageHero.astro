@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  alt?: string;
+}
+
+const { title, image, alt = '' } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-sage-900 text-white min-h-[16rem] md:min-h-[22rem]">
+  <img
+    src={image}
+    alt={alt}
+    width="1920"
+    height="800"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-sage-900/85 via-sage-900/70 to-sage-800/45"></div>
+  <div class="container-narrow relative py-16 md:py-24">
+    <h1 class="text-4xl md:text-5xl font-serif text-white mb-4 max-w-3xl">{title}</h1>
+    <div class="text-lg text-sage-100 max-w-3xl leading-relaxed">
+      <slot />
+    </div>
+  </div>
+</section>

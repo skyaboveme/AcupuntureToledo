@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site';
 import { buildPageSchema } from '../lib/schema';
 import { seo } from '../lib/seo';
@@ -32,14 +33,11 @@ const schema = buildPageSchema({
     { name: 'Locations', path: '/locations' },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow">
-      <h1 class="text-4xl md:text-5xl font-serif mb-6">Our Toledo Location</h1>
-      <p class="text-lg text-warm-700 leading-relaxed max-w-3xl">
-        Toledo Holistic Healthcare is a chiropractic and acupuncture clinic located in Toledo. We serve Lucas County and the surrounding areas of NW Ohio.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Our Toledo Location" image="/images/toledo-hero.webp" alt="Toledo, Ohio">
+    <p>
+      Toledo Holistic Healthcare is a chiropractic and acupuncture clinic located in Toledo. We serve Lucas County and the surrounding areas of NW Ohio.
+    </p>
+  </PageHero>
 
   <section class="section-padding bg-white">
     <div class="container-narrow">

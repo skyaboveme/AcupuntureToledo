@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/CTABanner.astro';
+import PageHero from '../components/PageHero.astro';
 import Button from '../components/Button.astro';
 import { conditions } from '../data/conditions';
 import { services } from '../data/services';
@@ -34,14 +35,11 @@ const schema = buildPageSchema({
     { name: 'Conditions', path: '/conditions' },
   ]}
 >
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-cream-50">
-    <div class="container-narrow">
-      <h1 class="text-4xl md:text-5xl font-serif mb-6">Conditions We Treat</h1>
-      <p class="text-lg text-warm-700 leading-relaxed max-w-3xl">
-        Dr. Jared Mainous, DC, and the team at Toledo Holistic Healthcare provide drug-free, holistic care for a wide range of conditions affecting patients throughout Toledo and NW Ohio.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Conditions We Treat" image="/images/1920-chiro-086.webp">
+    <p>
+      Dr. Jared Mainous, DC, and the team at Toledo Holistic Healthcare provide drug-free, holistic care for a wide range of conditions affecting patients throughout Toledo and NW Ohio.
+    </p>
+  </PageHero>
 
   <section class="section-padding bg-white">
     <div class="container-narrow space-y-16">
@@ -50,6 +48,15 @@ const schema = buildPageSchema({
           <article id={condition.slug} class="scroll-mt-24">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div class="lg:col-span-2">
+                <figure class="overflow-hidden rounded-2xl mb-6">
+                  <img
+                    src={condition.image}
+                    alt=""
+                    width="1000"
+                    height="750"
+                    class="w-full aspect-[16/9] object-cover"
+                  />
+                </figure>
                 <h2 class="text-2xl md:text-3xl font-serif mb-4">{condition.name}</h2>
                 <p class="text-teal-700 font-medium mb-4">{condition.shortDescription}</p>
                 {condition.description.split('\n\n').map((p) => (

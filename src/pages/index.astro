@@ -6,6 +6,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 import Button from '../components/Button.astro';
 import { site } from '../data/site';
 import { services } from '../data/services';
+import { conditions } from '../data/conditions';
 import { testimonials } from '../data/testimonials';
 import { faqs } from '../data/faq';
 import { buildPageSchema } from '../lib/schema';
@@ -34,7 +35,7 @@ const schema = buildPageSchema({
   <!-- Hero -->
   <section class="relative bg-sage-900 text-white overflow-hidden">
     <img
-      src="/images/toledo-hero.webp"
+      src="/images/1920-chiro-004.webp"
       alt=""
       class="absolute inset-0 w-full h-full object-cover opacity-35"
       width="1920"
@@ -65,6 +66,29 @@ const schema = buildPageSchema({
     </div>
   </section>
 
+  <section class="section-padding bg-cream-50">
+    <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <figure class="overflow-hidden rounded-2xl">
+        <img
+          src="/images/1000-chiro-036.webp"
+          alt="Gentle chiropractic care at Toledo Holistic Healthcare"
+          width="1000"
+          height="750"
+          class="w-full aspect-[4/3] object-cover"
+        />
+      </figure>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Get the Individualized Care You Deserve</h2>
+        <p class="text-warm-700 leading-relaxed mb-4">
+          There is no one adjustment or treatment plan that fits everyone. When you visit, we take time to listen and build care that fits your body, your goals, and your life.
+        </p>
+        <p class="text-warm-700 leading-relaxed">
+          Dr. Jared Mainous, DC, blends chiropractic and acupuncture so you can get relief, stay aligned, and feel like yourself again—without a rushed, one-size-fits-all visit.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Overview -->
   <section class="section-padding bg-white">
     <div class="container-narrow">
@@ -79,21 +103,65 @@ const schema = buildPageSchema({
           services.slice(0, 6).map((service) => (
             <a
               href={`/services/${service.slug}`}
-              class="group p-6 rounded-2xl border border-sage-200 hover:border-teal-400 hover:shadow-md transition-all bg-cream-50"
+              class="group overflow-hidden rounded-2xl border border-sage-200 hover:border-teal-400 hover:shadow-md transition-all bg-cream-50"
             >
-              <h3 class="text-xl font-serif text-sage-800 group-hover:text-teal-700 transition-colors mb-2">
-                {service.name}
-              </h3>
-              <p class="text-warm-700 text-sm leading-relaxed">{service.shortDescription}</p>
-              <span class="inline-block mt-4 text-teal-600 font-semibold text-sm group-hover:underline">
-                Learn more →
-              </span>
+              <img
+                src={service.image}
+                alt=""
+                width="800"
+                height="600"
+                class="w-full aspect-[4/3] object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-serif text-sage-800 group-hover:text-teal-700 transition-colors mb-2">
+                  {service.name}
+                </h3>
+                <p class="text-warm-700 text-sm leading-relaxed">{service.shortDescription}</p>
+                <span class="inline-block mt-4 text-teal-600 font-semibold text-sm group-hover:underline">
+                  Learn more →
+                </span>
+              </div>
             </a>
           ))
         }
       </div>
       <div class="text-center mt-10">
         <Button href="/services">View All Services</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions -->
+  <section class="section-padding bg-cream-50">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Conditions We Treat</h2>
+        <p class="text-warm-700 text-lg max-w-2xl mx-auto">
+          Drug-free, holistic care for the issues patients in Toledo and NW Ohio bring to us most often.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          conditions.map((condition) => (
+            <a
+              href={`/conditions#${condition.slug}`}
+              class="group relative overflow-hidden rounded-2xl min-h-[14rem] flex items-end"
+            >
+              <img
+                src={condition.image}
+                alt=""
+                width="800"
+                height="600"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-sage-900/85 via-sage-900/40 to-transparent"></div>
+              <div class="relative p-6 text-white">
+                <h3 class="text-xl font-serif text-white mb-1">{condition.name}</h3>
+                <p class="text-sage-100 text-sm leading-relaxed">{condition.shortDescription}</p>
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -120,8 +188,42 @@ const schema = buildPageSchema({
     </div>
   </section>
 
-  <!-- Testimonials Preview -->
+  <!-- Family care + office -->
   <section class="section-padding bg-white">
+    <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <figure class="overflow-hidden rounded-2xl">
+        <img
+          src="/images/fam-002.webp"
+          alt="Dr. Jared Mainous, DC, with his family"
+          width="1000"
+          height="1000"
+          class="w-full h-full object-cover"
+        />
+      </figure>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-serif mb-4">Care for the Whole Family</h2>
+        <p class="text-warm-700 leading-relaxed mb-4">
+          From newborns to grandparents, we provide gentle chiropractic and acupuncture care tailored to every stage of life. Dr. Jared is a family-friendly provider who takes time to understand your body and your goals.
+        </p>
+        <p class="text-warm-700 leading-relaxed mb-6">
+          Visit our Toledo office at 2828 W Central Ave, Suite 1 — a convenient location serving Lucas County and NW Ohio.
+        </p>
+        <figure class="overflow-hidden rounded-2xl mb-6">
+          <img
+            src="/images/tol-office.webp"
+            alt="Toledo Holistic Healthcare office at 2828 W Central Ave"
+            width="800"
+            height="520"
+            class="w-full h-56 object-cover"
+          />
+        </figure>
+        <Button href="/about">Meet the Team</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="section-padding bg-cream-50">
     <div class="container-narrow">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-serif mb-4">What Our Patients Say</h2>
