@@ -12,8 +12,14 @@ const { name, role, alt, src = '', class: className = '' } = Astro.props;
 
 {
   src ? (
-    <figure class:list={['overflow-hidden rounded-2xl bg-sage-100', className]}>
-      <img src={src} alt={alt} width="800" height="600" class="w-full h-full object-cover aspect-[4/3]" />
+    <figure class:list={['overflow-hidden rounded-2xl bg-sage-50', className]}>
+      <img
+        src={src}
+        alt={alt}
+        width="800"
+        height="1000"
+        class="w-full h-auto object-contain object-top"
+      />
       <figcaption class="sr-only">
         {name}
         {role ? `, ${role}` : ''}
