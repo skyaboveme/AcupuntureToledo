@@ -2,6 +2,7 @@ export const services = [
   {
     slug: 'chiropractic',
     name: 'Chiropractic',
+    image: '/images/1000-chiro-016.webp',
     shortDescription:
       'Gentle spinal adjustments to restore alignment, relieve pain, and support whole-body wellness for all ages.',
     description: `Chiropractic care is the foundation of Toledo Holistic Healthcare. Dr. Jared Mainous, DC, uses precise, gentle adjustments to correct spinal misalignments, improve nervous system function, and help your body heal naturally.
@@ -22,6 +23,7 @@ We serve patients of all ages in Toledo and NW Ohio, from infants to seniors, wi
   {
     slug: 'acupuncture',
     name: 'Acupuncture',
+    image: '/images/1000-chiro-003.webp',
     shortDescription:
       'Traditional Eastern healing technique using fine needles to balance energy, reduce pain, and promote healing.',
     description: `Acupuncture is a time-tested healing modality that Dr. Jared Mainous integrates into his holistic practice. By inserting fine, sterile needles at specific points along the body's meridians, acupuncture helps restore balance, reduce pain, and support the body's natural healing processes.
@@ -40,8 +42,9 @@ This Eastern healing practice complements chiropractic care beautifully, address
     relatedConditions: ['back-pain', 'neck-pain', 'headaches', 'fertility'],
   },
   {
-    slug: 'massage-therapy',
+    slug: 'massage',
     name: 'Massage Therapy',
+    image: '/images/1000-chiro-100.webp',
     shortDescription:
       'In-house therapeutic massage blending relaxation with targeted deep tissue work by a licensed massage therapist.',
     description: `Aleshia, our Licensed Massage Therapist and owner of 10 Eleven Massage, provides in-house massage therapy at Toledo Holistic Healthcare. Her sessions blend relaxation techniques with targeted deep tissue work to release muscle tension, reduce stress, and support your chiropractic and acupuncture care.
@@ -60,6 +63,7 @@ Massage therapy is an excellent complement to structural adjustments, helping so
   {
     slug: 'cupping',
     name: 'Cupping',
+    image: '/images/1000-chiro-039.webp',
     shortDescription:
       'Traditional therapy using suction cups to increase blood flow, release muscle tension, and promote healing.',
     description: `Cupping is an ancient healing technique that uses suction cups placed on the skin to increase blood flow, release muscle tension, and promote healing. This therapy is often used alongside acupuncture and chiropractic care for patients dealing with chronic pain, muscle tightness, and inflammation.
@@ -78,6 +82,7 @@ At Toledo Holistic Healthcare, cupping is offered as part of our integrative app
   {
     slug: 'fertility',
     name: 'Fertility Support',
+    image: '/images/1000-chiro-022.webp',
     shortDescription:
       'Chiropractic and acupuncture support to optimize nervous system function for reproductive health.',
     description: `Fertility support at Toledo Holistic Healthcare focuses on optimizing nervous system function—a key factor in reproductive health. Chiropractic adjustments help ensure clear communication between your brain and reproductive organs, while acupuncture can support hormonal balance and reduce stress.
@@ -96,6 +101,7 @@ Dr. Jared works with patients on their fertility journey throughout NW Ohio, pro
   {
     slug: 'pregnancy',
     name: 'Pregnancy Care',
+    image: '/images/1000-chiro-047.webp',
     shortDescription:
       'Gentle prenatal chiropractic care to support comfort, alignment, and wellness throughout pregnancy.',
     description: `Pregnancy places unique demands on your body, and gentle prenatal chiropractic care can help you stay comfortable and aligned throughout each trimester. Dr. Jared has extensive experience caring for expectant mothers in Toledo, including postpartum support for both mother and baby.
@@ -114,6 +120,7 @@ Our family-friendly practice welcomes patients at every stage of pregnancy. Adju
   {
     slug: 'electrical-muscle-stimulation',
     name: 'Electrical Muscle Stimulation',
+    image: '/images/1000-chiro-119.webp',
     shortDescription:
       'Therapeutic electrical impulses to reduce pain, decrease inflammation, and accelerate muscle recovery.',
     description: `Electrical Muscle Stimulation (EMS) uses controlled electrical impulses to stimulate muscles, reduce pain, decrease inflammation, and accelerate recovery. This therapy is commonly used alongside chiropractic adjustments for patients recovering from injuries, dealing with muscle spasms, or managing chronic pain.
@@ -132,6 +139,7 @@ At Toledo Holistic Healthcare, EMS is integrated into comprehensive treatment pl
   {
     slug: 'cold-laser-therapy',
     name: 'Cold Laser Therapy',
+    image: '/images/1000-chiro-124.webp',
     shortDescription:
       'Low-level laser therapy to reduce inflammation, promote tissue healing, and relieve pain without heat or incision.',
     description: `Cold Laser Therapy (also known as low-level laser therapy) uses specific wavelengths of light to penetrate tissues and stimulate cellular healing. This non-invasive therapy reduces inflammation, promotes tissue repair, and relieves pain—without heat, incision, or downtime.
@@ -150,6 +158,7 @@ Dr. Jared incorporates cold laser therapy into treatment plans for patients with
   {
     slug: 'electro-meridian-imaging',
     name: 'Electro-Meridian Imaging',
+    image: '/images/1000-chiro-026.webp',
     shortDescription:
       'Advanced diagnostic tool mapping energy pathways to guide personalized acupuncture and holistic treatment.',
     description: `Electro-Meridian Imaging (EMI) is an advanced diagnostic tool that maps the body's energy pathways (meridians) to identify imbalances and guide personalized treatment. This technology helps Dr. Jared tailor acupuncture and holistic care plans based on objective data about your body's energetic health.

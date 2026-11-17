@@ -9,7 +9,7 @@ export const conditions = [
 Dr. Jared Mainous, DC, uses gentle chiropractic adjustments to address the root cause of your pain—not just mask symptoms. By restoring proper spinal alignment and nervous system function, we help your body heal naturally. Many Toledo and NW Ohio patients find lasting relief without relying on medication.
 
 We also integrate complementary therapies such as massage, acupuncture, and cold laser therapy when appropriate to support your recovery.`,
-    relatedServices: ['chiropractic', 'massage-therapy', 'acupuncture', 'cold-laser-therapy'],
+    relatedServices: ['chiropractic', 'massage', 'acupuncture', 'cold-laser-therapy'],
   },
   {
     slug: 'neck-pain',
@@ -21,7 +21,7 @@ We also integrate complementary therapies such as massage, acupuncture, and cold
 Our chiropractic care focuses on restoring proper neck alignment and relieving muscle tension. Dr. Jared takes a gentle, patient-centered approach—especially important for patients recovering from whiplash or chronic stress-related tension.
 
 If you are in the Toledo area and struggling with neck pain, we can help you regain comfort and mobility through drug-free, holistic care.`,
-    relatedServices: ['chiropractic', 'acupuncture', 'massage-therapy'],
+    relatedServices: ['chiropractic', 'acupuncture', 'massage'],
   },
   {
     slug: 'headaches',
@@ -51,7 +51,7 @@ We work with most private insurance for car accidents and coordinate care to doc
     description: `Whether you are a weekend warrior or a competitive athlete in NW Ohio, sports injuries like joint pain, muscle strains, and ligament damage can sideline you from the activities you love.
 
 Our holistic approach combines chiropractic adjustments, soft tissue therapies, and rehabilitative techniques to reduce pain, restore function, and support performance recovery. We tailor treatment plans to your sport, injury, and goals—helping you return to play safely and stronger.`,
-    relatedServices: ['chiropractic', 'massage-therapy', 'electrical-muscle-stimulation', 'cold-laser-therapy'],
+    relatedServices: ['chiropractic', 'massage', 'electrical-muscle-stimulation', 'cold-laser-therapy'],
   },
   {
     slug: 'work-injuries',
@@ -61,7 +61,7 @@ Our holistic approach combines chiropractic adjustments, soft tissue therapies, 
     description: `Repetitive strain injuries, lifting accidents, and workplace ergonomics issues are common sources of chronic pain for Toledo workers. We treat work-related injuries with a focus on healing, mobility, and preventing re-injury.
 
 We work with workers compensation insurance and develop care plans that address both immediate pain relief and long-term functional recovery—so you can return to work with confidence.`,
-    relatedServices: ['chiropractic', 'massage-therapy', 'electrical-muscle-stimulation'],
+    relatedServices: ['chiropractic', 'massage', 'electrical-muscle-stimulation'],
   },
   {
     slug: 'fertility',

@@ -69,12 +69,14 @@ Yes, accepting new patients. Care provided for ALL ages, from newborn babies to 
 - Testimonials: https://acupuncturetoledo.com/testimonials
 - FAQ: https://acupuncturetoledo.com/faq
 - Contact: https://acupuncturetoledo.com/contact
+- Locations: https://acupuncturetoledo.com/locations
+- Insurance & Billing: https://acupuncturetoledo.com/billing
 
 ## Service Pages
 
 - https://acupuncturetoledo.com/services/chiropractic
 - https://acupuncturetoledo.com/services/acupuncture
-- https://acupuncturetoledo.com/services/massage-therapy
+- https://acupuncturetoledo.com/services/massage
 - https://acupuncturetoledo.com/services/cupping
 - https://acupuncturetoledo.com/services/fertility
 - https://acupuncturetoledo.com/services/pregnancy

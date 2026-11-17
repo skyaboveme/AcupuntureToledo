@@ -25,7 +25,7 @@ export function clinicSchema(options: SchemaOptions = {}) {
     url,
     telephone: site.phoneTel,
     email: site.email,
-    image: `${site.url}/images/og-default.svg`,
+    image: `${site.url}/images/toledo-hero.webp`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,

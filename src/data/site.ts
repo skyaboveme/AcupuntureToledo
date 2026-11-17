@@ -16,10 +16,13 @@ export const site = {
     full: '2828 W Central Ave, Suite 1, Toledo, OH 43606',
   },
   geo: {
-    latitude: 41.6736,
-    longitude: -83.6172,
+    latitude: 41.6639,
+    longitude: -83.6053,
   },
   region: 'Toledo and NW Ohio',
+  mapUrl: 'https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9',
+  mapEmbedUrl:
+    'https://maps.google.com/maps?q=2828%20W%20Central%20Ave%2C%20Suite%201%2C%20Toledo%2C%20OH%2043606&output=embed',
   hours: [
     { day: 'Sunday', hours: 'Closed', schema: null },
     { day: 'Monday', hours: '8 AM – 6 PM', schema: { opens: '08:00', closes: '18:00' } },

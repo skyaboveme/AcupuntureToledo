@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/conditions', label: 'Conditions' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/locations', label: 'Locations' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -17,11 +18,14 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-50 bg-cream-50/95 backdrop-blur-sm border-b border-sage-200">
   <div class="container-narrow">
     <div class="flex items-center justify-between h-16 md:h-20">
-      <a href="/" class="flex flex-col group" aria-label={`${site.name} — Home`}>
-        <span class="font-serif text-lg md:text-xl font-semibold text-sage-800 group-hover:text-teal-700 transition-colors leading-tight">
-          Toledo Holistic
+      <a href="/" class="flex items-center gap-3 group" aria-label={`${site.name} — Home`}>
+        <img src="/images/logo2.webp" alt="" width="48" height="48" class="h-10 w-10 md:h-12 md:w-12 object-contain" />
+        <span class="flex flex-col">
+          <span class="font-serif text-lg md:text-xl font-semibold text-sage-800 group-hover:text-teal-700 transition-colors leading-tight">
+            Toledo Holistic
+          </span>
+          <span class="text-xs text-sage-600 tracking-wide">Healthcare</span>
         </span>
-        <span class="text-xs text-sage-600 tracking-wide">Healthcare</span>
       </a>
 
       <!-- Desktop nav -->

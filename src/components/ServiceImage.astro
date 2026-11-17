@@ -2,26 +2,35 @@
 interface Props {
   title: string;
   alt: string;
+  src?: string;
   class?: string;
 }
 
-const { title, alt, class: className = '' } = Astro.props;
+const { title, alt, src = '', class: className = '' } = Astro.props;
 ---
 
-<div
-  class:list={[
-    'relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-100 via-sage-100 to-cream-200 aspect-[16/9] flex items-center justify-center',
-    className,
-  ]}
-  role="img"
-  aria-label={alt}
->
-  <div class="text-center p-8">
-    <svg class="w-16 h-16 mx-auto text-sage-400 mb-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-    </svg>
-    <p class="text-sage-600 font-serif text-lg">{title}</p>
-    <p class="text-sage-500 text-sm mt-2 italic">Image placeholder — replace before launch</p>
-  </div>
-</div>
+{
+  src ? (
+    <figure class:list={['overflow-hidden rounded-2xl bg-sage-100', className]}>
+      <img src={src} alt={alt} width="960" height="540" class="w-full h-full object-cover aspect-[16/9]" />
+    </figure>
+  ) : (
+    <div
+      class:list={[
+        'relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-100 via-sage-100 to-cream-200 aspect-[16/9] flex items-center justify-center',
+        className,
+      ]}
+      role="img"
+      aria-label={alt}
+    >
+      <div class="text-center p-8">
+        <svg class="w-16 h-16 mx-auto text-sage-400 mb-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+        </svg>
+        <p class="text-sage-600 font-serif text-lg">{title}</p>
+        <p class="text-sage-500 text-sm mt-2 italic">Image placeholder — replace before launch</p>
+      </div>
+    </div>
+  )
+}

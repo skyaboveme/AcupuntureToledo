@@ -2,7 +2,11 @@
 
 Modern, SEO-optimized marketing website for [Toledo Holistic Healthcare](https://acupuncturetoledo.com/) — a holistic chiropractic, acupuncture, and wellness clinic in Toledo, Ohio.
 
-Built with **Astro 7**, **TypeScript**, and **Tailwind CSS 4**. Static-generated for fast performance and strong Core Web Vitals.
+Built with **Astro 7**, **TypeScript**, and **Tailwind CSS 4**. Deployed as a Cloudflare Worker with static assets.
+
+- **GitHub:** [skyaboveme/AcupuntureToledo](https://github.com/skyaboveme/AcupuntureToledo)
+- **Cloudflare Worker:** `acupunturetoledo` (account `aa96f50b9174b128d2cbe8f6db54b940`)
+- **Production domain:** https://acupuncturetoledo.com
 
 ## Quick Start
 
@@ -11,7 +15,10 @@ npm install
 npm run dev      # Start dev server at http://localhost:4318
 npm run build    # Production build to ./dist
 npm run preview  # Preview production build
+npm run deploy   # Build and deploy to Cloudflare Workers
 ```
+
+Workers Builds is connected to the GitHub `main` branch. Pushing to `main` runs `npm run build` then `npx wrangler deploy`.
 
 ## Project Structure
 
@@ -28,7 +35,8 @@ public/
 ├── favicon.svg
 ├── llms.txt        # AI-readable business summary
 ├── robots.txt
-└── images/         # Placeholder images (replace before launch)
+└── images/         # Clinic photos and logo
+wrangler.jsonc      # Cloudflare Worker name, assets, account
 ```
 
 ## Pages
@@ -42,46 +50,39 @@ public/
 | `/conditions` | Conditions we treat |
 | `/testimonials` | Patient reviews |
 | `/faq` | Frequently asked questions |
-| `/contact` | Contact form, hours, map placeholder |
+| `/locations` | Toledo office, hours, map |
+| `/billing` | Insurance & billing |
+| `/contact` | Contact form, hours, map |
+
+Legacy `.php` URLs from the previous site redirect to the matching new routes.
 
 ## Before Launch Checklist
 
-### 1. Replace Placeholder Images
-
-Real clinic and team photos should replace placeholders at these locations:
+### 1. Remaining photos
 
 | File to add | Used in |
 |-------------|---------|
-| `public/images/team/jared-mainous.jpg` | About page — Dr. Jared Mainous |
-| `public/images/team/aleshia.jpg` | About page — Aleshia, LMT |
-| `public/images/team/lori.jpg` | About page — Lori C. |
-| `public/images/services/[slug].jpg` | Individual service pages |
-| `public/images/og-default.jpg` | Open Graph / social sharing (1200×630) |
+| `public/images/jared-mainous.webp` | About page — Dr. Jared Mainous (still a placeholder) |
 
-Update `PlaceholderImage.astro` and `ServiceImage.astro` to use `<Image>` from `astro:assets` once real photos are available.
+Aleshia, Lori, the office, logo, and service photos are already in `public/images/`. Set `team[0].image` in `src/data/team.ts` once Dr. Jared's photo is added.
 
 ### 2. Wire Up Contact Form
 
 The contact form (`src/components/ContactForm.astro`) validates client-side but needs a backend before go-live. Options:
 
 - **[Formspree](https://formspree.io/)** — set `FORM_ACTION` to your Formspree endpoint
-- **Netlify Forms** — add `netlify` attribute and deploy to Netlify
-- **Serverless function** — e.g. Cloudflare Workers, AWS Lambda
+- **Cloudflare Worker** — handle POST in a Worker and email via an API
 - **Email API** — SendGrid, Resend, etc.
 
 Change `FORM_ACTION` in `ContactForm.astro` from `'#'` to your endpoint URL.
 
-### 3. Add Google Maps Embed
-
-Replace the map placeholder on `/contact` with a Google Maps iframe embed for:
-`2828 W Central Ave, Suite 1, Toledo, OH 43606`
-
-### 4. Content TODOs
+### 3. Content TODOs
 
 - **Saturday hours** — marked Closed (not listed on original site)
 - **Insurance panel list** — general statement only; no specific carrier list available
 - **Pricing** — not provided; no fee schedule included
 - **Social profiles** — no verified social links; omitted from schema `sameAs`
+- **Dr. Jared photo** — not in the previous image set
 
 ## SEO & Structured Data
 

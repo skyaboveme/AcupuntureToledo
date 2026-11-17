@@ -61,7 +61,11 @@ const relatedConditions = conditions.filter((c) =>
           <h1 class="text-4xl md:text-5xl font-serif mb-6">{service.name}</h1>
           <p class="text-lg text-warm-700 leading-relaxed">{service.shortDescription}</p>
         </div>
-        <ServiceImage title={service.name} alt={`Illustration for ${service.name} at Toledo Holistic Healthcare`} />
+        <ServiceImage
+          title={service.name}
+          alt={`${service.name} at Toledo Holistic Healthcare`}
+          src={service.image}
+        />
       </div>
     </div>
   </section>

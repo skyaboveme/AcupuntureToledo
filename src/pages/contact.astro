@@ -92,32 +92,23 @@ const schema = buildPageSchema({
             </ul>
           </div>
 
-          <!-- Map placeholder -->
           <div class="rounded-2xl overflow-hidden border border-sage-200">
-            <div
-              class="bg-sage-100 aspect-[4/3] flex items-center justify-center p-8 text-center"
-              role="img"
-              aria-label="Map showing location of Toledo Holistic Healthcare at 2828 W Central Ave, Toledo, OH"
-            >
-              <div>
-                <svg class="w-12 h-12 mx-auto text-sage-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <p class="text-sage-700 font-medium mb-2">Map Embed Placeholder</p>
-                <p class="text-sm text-sage-600 mb-4">
-                  TODO: Replace with Google Maps embed for<br />
-                  {site.address.full}
-                </p>
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.full)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-teal-700 hover:text-teal-600 font-semibold text-sm"
-                >
-                  Open in Google Maps →
-                </a>
-              </div>
+            <iframe
+              title={`Map of ${site.name}`}
+              src={site.mapEmbedUrl}
+              class="w-full aspect-[4/3] border-0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="bg-sage-50 p-4 text-center">
+              <a
+                href={site.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-teal-700 hover:text-teal-600 font-semibold text-sm"
+              >
+                Open in Google Maps →
+              </a>
             </div>
           </div>
         </div>
