@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://acupuncturetoledo.com/sitemap-index.xml
+# Clinic briefing for AI crawlers: https://llmstxt.org
+# https://acupuncturetoledo.com/llms.txt

@@ -1,5 +1,7 @@
 import { site, openingHoursSpecification } from '../data/site';
 import { leadPractitioner } from '../data/team';
+import { services } from '../data/services';
+import type { FAQ } from '../data/faq';
 
 export interface SchemaOptions {
   title?: string;
@@ -7,9 +9,15 @@ export interface SchemaOptions {
   path?: string;
   breadcrumbs?: { name: string; path: string }[];
   service?: { name: string; description: string; slug: string };
-  faqs?: { question: string; answer: string }[];
+  condition?: { name: string; description: string; slug: string };
+  faqs?: FAQ[];
   reviews?: { quote: string; author: string }[];
   includePhysician?: boolean;
+}
+
+function absoluteUrl(path: string) {
+  if (path.startsWith('http')) return path;
+  return `${site.url}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
 export function clinicSchema(options: SchemaOptions = {}) {
@@ -25,7 +33,12 @@ export function clinicSchema(options: SchemaOptions = {}) {
     url,
     telephone: site.phoneTel,
     email: site.email,
-    image: `${site.url}/images/toledo-hero.webp`,
+    image: [
+      absoluteUrl('/images/tol-office.webp'),
+      absoluteUrl('/images/fam-002.webp'),
+      absoluteUrl(leadPractitioner.image),
+    ],
+    logo: absoluteUrl('/images/logo2.webp'),
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -51,6 +64,26 @@ export function clinicSchema(options: SchemaOptions = {}) {
       geoRadius: '50000',
     },
     priceRange: '$$',
+    sameAs: [...site.sameAs],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: site.googleReviews.ratingValue,
+      reviewCount: site.googleReviews.reviewCount,
+      bestRating: site.googleReviews.bestRating,
+      worstRating: '1',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Holistic health services',
+      itemListElement: services.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'MedicalProcedure',
+          name: service.name,
+          url: `${site.url}/services/${service.slug}`,
+        },
+      })),
+    },
   };
 
   return schema;
@@ -64,12 +97,43 @@ export function physicianSchema() {
     name: leadPractitioner.name,
     jobTitle: 'Doctor of Chiropractic',
     medicalSpecialty: ['Chiropractic', 'Acupuncture'],
+    image: absoluteUrl(leadPractitioner.image),
+    url: `${site.url}/about`,
+    license: leadPractitioner.licenses.map(
+      (license) => `${license.state} ${license.name} license ${license.number}`
+    ),
+    identifier: {
+      '@type': 'PropertyValue',
+      name: 'NPI',
+      value: leadPractitioner.npi,
+    },
+    hasCredential: leadPractitioner.licenses.map((license) => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: license.name,
+      recognizedBy: {
+        '@type': 'Organization',
+        name: `State of ${license.state}`,
+      },
+      identifier: license.number,
+    })),
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: leadPractitioner.education.school,
+    },
     worksFor: {
       '@type': 'MedicalClinic',
       '@id': `${site.url}/#organization`,
       name: site.name,
     },
-    url: `${site.url}/about`,
+    knowsAbout: [
+      'Chiropractic',
+      'Acupuncture',
+      'Whiplash',
+      'Back Pain',
+      'Neck Pain',
+      'Prenatal Chiropractic',
+    ],
+    sameAs: ['https://www.healthgrades.com/providers/jared-mainous-afrhelu037'],
   };
 }
 
@@ -80,6 +144,7 @@ export function serviceSchema(service: { name: string; description: string; slug
     name: service.name,
     description: service.description,
     url: `${site.url}/services/${service.slug}`,
+    image: absoluteUrl(services.find((s) => s.slug === service.slug)?.heroImage || '/images/toledo-hero.webp'),
     provider: {
       '@type': 'MedicalClinic',
       '@id': `${site.url}/#organization`,
@@ -89,7 +154,33 @@ export function serviceSchema(service: { name: string; description: string; slug
   };
 }
 
-export function faqPageSchema(faqs: { question: string; answer: string }[]) {
+export function conditionSchema(condition: { name: string; description: string; slug: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: condition.name,
+    description: condition.description,
+    url: `${site.url}/conditions/${condition.slug}`,
+    about: {
+      '@type': 'MedicalCondition',
+      name: condition.name,
+    },
+    audience: {
+      '@type': 'PeopleAudience',
+      geographicArea: {
+        '@type': 'AdministrativeArea',
+        name: 'Toledo, Ohio',
+      },
+    },
+    sourceOrganization: {
+      '@type': 'MedicalClinic',
+      '@id': `${site.url}/#organization`,
+      name: site.name,
+    },
+  };
+}
+
+export function faqPageSchema(faqs: FAQ[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -145,8 +236,16 @@ export function buildPageSchema(options: SchemaOptions = {}) {
     graphs.push(serviceSchema(options.service));
   }
 
+  if (options.condition) {
+    graphs.push(conditionSchema(options.condition));
+  }
+
   if (options.faqs?.length) {
     graphs.push(faqPageSchema(options.faqs));
+  }
+
+  if (options.reviews?.length) {
+    graphs.push(...reviewSchemas(options.reviews));
   }
 
   if (options.breadcrumbs?.length) {

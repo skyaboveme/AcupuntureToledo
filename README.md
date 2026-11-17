@@ -29,7 +29,8 @@ src/
 ├── layouts/        # BaseLayout with SEO + schema
 ├── lib/            # SEO and schema.org helpers
 ├── pages/          # Route pages
-│   └── services/   # Individual service pages ([slug].astro)
+│   ├── services/   # Individual service pages ([slug].astro)
+│   └── conditions/ # Individual condition pages ([slug].astro)
 └── styles/         # Global CSS + Tailwind theme
 public/
 ├── favicon.svg
@@ -47,7 +48,8 @@ wrangler.jsonc      # Cloudflare Worker name, assets, account
 | `/about` | Practice story + team bios |
 | `/services` | Services overview |
 | `/services/[slug]` | Individual service pages (9 services) |
-| `/conditions` | Conditions we treat |
+| `/conditions` | Conditions hub (cards link to dedicated pages) |
+| `/conditions/[slug]` | Individual condition pages (back pain, whiplash-toledo, etc.) |
 | `/testimonials` | Patient reviews |
 | `/faq` | Frequently asked questions |
 | `/locations` | Toledo office, hours, map |
@@ -75,29 +77,33 @@ Change `FORM_ACTION` in `ContactForm.astro` from `'#'` to your endpoint URL.
 ### 3. Content TODOs
 
 - **Saturday hours** — marked Closed (not listed on original site)
-- **Insurance panel list** — general statement only; no specific carrier list available
+- **Insurance panel list** — general statement only; add named carriers after Lori confirms the panel
 - **Pricing** — not provided; no fee schedule included
-- **Social profiles** — no verified social links; omitted from schema `sameAs`
-- **Dr. Jared headshot** — family photos from the previous site are used until a dedicated headshot is added
+- **Social profiles** — schema `sameAs` includes Healthgrades, Google Maps, and Facebook. Instagram and WebMD are omitted until a verified profile URL exists
+- **Dr. Jared headshot** — family photos from the previous site are used in Physician schema until a dedicated headshot is added
 
 ## SEO & Structured Data
 
 ### On-Page SEO
 - Unique `<title>` and meta description per page (Toledo + service/condition keywords)
+- Dedicated condition URLs such as `/conditions/back-pain` and `/conditions/whiplash-toledo`
 - Canonical URLs via `site` config
-- Open Graph + Twitter Card tags on every page
+- Unique Open Graph images per service, condition, and major page
+- Descriptive image `alt` text (provider, action, and Toledo)
 - `sitemap-index.xml` via `@astrojs/sitemap`
 - `robots.txt` allowing crawl with sitemap reference
-- `llms.txt` for AI assistant discoverability
+- `llms.txt` clinic briefing for AI crawlers (new patients, ages, no massage, parking, Q&A)
 - Semantic HTML5, proper heading hierarchy, skip link
 - Internal linking between services, conditions, about, contact
 
 ### Schema.org JSON-LD
-- **MedicalClinic / MedicalBusiness / LocalBusiness** on all pages (real NAP, geo, hours)
-- **Physician** schema for Dr. Jared Mainous on home and about pages
-- **MedicalProcedure** (Service) schema on each service page
-- **FAQPage** schema on `/faq`
-- **Review** schema on `/testimonials` (no invented `ratingValue` or `aggregateRating`)
+- **MedicalClinic / MedicalBusiness / LocalBusiness** on all pages (NAP, geo, hours, `sameAs`, `hasOfferCatalog`)
+- **aggregateRating** from Google (4.7 / 33) — do not invent additional ratings
+- **Physician** for Dr. Jared Mainous (NPI, Ohio licenses, Palmer 2018, image)
+- **MedicalProcedure** on each service page
+- **MedicalWebPage** on each condition page
+- **FAQPage** on `/faq`, home, billing, and every service and condition page
+- **Review** on `/testimonials` (quotes only; no invented `ratingValue` on individual reviews)
 - **BreadcrumbList** on nested pages
 
 ## Design

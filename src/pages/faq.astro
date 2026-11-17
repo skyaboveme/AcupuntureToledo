@@ -10,7 +10,7 @@ import { seo } from '../lib/seo';
 const pageSeo = seo({
   title: 'FAQ — Toledo Holistic Healthcare',
   description:
-    'Frequently asked questions about Toledo Holistic Healthcare: new patients, insurance, ages served, services, and how to book an appointment in Toledo, OH.',
+    'FAQ for Toledo Holistic Healthcare: first visits, kids, pregnancy, acupuncture, auto insurance, parking, and how to book in Toledo, OH.',
   path: '/faq',
 });
 
@@ -29,13 +29,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/faq"
+  ogImage="/images/1920-chiro-023.webp"
+  ogImageAlt="Acupuncture and chiropractic FAQ at Toledo Holistic Healthcare"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'FAQ', path: '/faq' },
   ]}
 >
-  <PageHero title="Frequently Asked Questions" image="/images/1920-chiro-023.webp">
+  <PageHero title="Frequently Asked Questions" image="/images/1920-chiro-023.webp" alt="Answers about chiropractic and acupuncture care in Toledo, Ohio">
     <p>
       Find answers to common questions about our practice, services, insurance, and scheduling.
     </p>

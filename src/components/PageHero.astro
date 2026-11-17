@@ -5,7 +5,7 @@ interface Props {
   alt?: string;
 }
 
-const { title, image, alt = '' } = Astro.props;
+const { title, image, alt = `${title} at Toledo Holistic Healthcare in Toledo, Ohio` } = Astro.props;
 ---
 
 <section class="relative overflow-hidden bg-sage-900 text-white min-h-[16rem] md:min-h-[22rem]">

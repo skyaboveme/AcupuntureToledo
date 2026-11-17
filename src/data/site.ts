@@ -16,8 +16,18 @@ export const site = {
     full: '2828 W Central Ave, Suite 1, Toledo, OH 43606',
   },
   geo: {
-    latitude: 41.6639,
-    longitude: -83.6053,
+    latitude: 41.677592,
+    longitude: -83.612074,
+  },
+  sameAs: [
+    'https://www.healthgrades.com/providers/jared-mainous-afrhelu037',
+    'https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9',
+    'https://www.facebook.com/158820987485914',
+  ],
+  googleReviews: {
+    ratingValue: '4.7',
+    reviewCount: 33,
+    bestRating: '5',
   },
   region: 'Toledo and NW Ohio',
   mapUrl: 'https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9',

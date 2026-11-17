@@ -39,5 +39,6 @@ export default defineConfig({
     '/pregnancy.php': '/services/pregnancy',
     '/fertility.php': '/services/fertility',
     '/services/massage-therapy': '/services',
+    '/conditions/whiplash': '/conditions/whiplash-toledo',
   },
 });

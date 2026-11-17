@@ -29,13 +29,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/contact"
+  ogImage="/images/1920-chiro-001.webp"
+  ogImageAlt="Toledo Holistic Healthcare clinic interior in Toledo, Ohio"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Contact', path: '/contact' },
   ]}
 >
-  <PageHero title="Contact Us" image="/images/1920-chiro-001.webp">
+  <PageHero title="Contact Us" image="/images/1920-chiro-001.webp" alt="Contact Toledo Holistic Healthcare at 2828 W Central Ave, Suite 1">
     <p>
       Ready to start your wellness journey? Call, email, or fill out the form below. We are accepting new patients and look forward to hearing from you.
     </p>

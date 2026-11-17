@@ -4,7 +4,7 @@ import CTABanner from '../components/CTABanner.astro';
 import PageHero from '../components/PageHero.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import { testimonials } from '../data/testimonials';
-import { buildPageSchema, reviewSchemas } from '../lib/schema';
+import { buildPageSchema } from '../lib/schema';
 import { seo } from '../lib/seo';
 
 const pageSeo = seo({
@@ -14,25 +14,30 @@ const pageSeo = seo({
   path: '/testimonials',
 });
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    ...reviewSchemas([...testimonials]),
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: '/testimonials',
+  reviews: [...testimonials],
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Testimonials', path: '/testimonials' },
   ],
-};
+});
 ---
 
 <BaseLayout
   title={pageSeo.title}
   description={pageSeo.description}
   path="/testimonials"
+  ogImage="/images/fam-003.webp"
+  ogImageAlt="Dr. Jared Mainous, DC, and his family in the Toledo area"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Testimonials', path: '/testimonials' },
   ]}
 >
-  <PageHero title="Patient Testimonials" image="/images/fam-003.webp" alt="The Mainous family">
+  <PageHero title="Patient Testimonials" image="/images/fam-003.webp" alt="Dr. Jared Mainous, DC, and his family in the Toledo area">
     <p>
       Hear from real patients who have experienced the difference of holistic, patient-centered care at Toledo Holistic Healthcare.
     </p>

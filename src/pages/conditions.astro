@@ -2,16 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import PageHero from '../components/PageHero.astro';
-import Button from '../components/Button.astro';
 import { conditions } from '../data/conditions';
-import { services } from '../data/services';
 import { buildPageSchema } from '../lib/schema';
 import { seo } from '../lib/seo';
 
 const pageSeo = seo({
   title: 'Conditions We Treat — Chiropractic & Acupuncture in Toledo',
   description:
-    'Toledo Holistic Healthcare treats back pain, neck pain, headaches, auto injuries, sports injuries, work injuries, and fertility support in Toledo, OH.',
+    'Toledo Holistic Healthcare treats back pain, neck pain, headaches, whiplash and auto injuries, sports injuries, work injuries, and fertility support in Toledo, OH.',
   path: '/conditions',
 });
 
@@ -29,65 +27,39 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/conditions"
+  ogImage="/images/1920-chiro-086.webp"
+  ogImageAlt="Chiropractic care for common conditions at Toledo Holistic Healthcare"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Conditions', path: '/conditions' },
   ]}
 >
-  <PageHero title="Conditions We Treat" image="/images/1920-chiro-086.webp">
+  <PageHero title="Conditions We Treat" image="/images/1920-chiro-086.webp" alt="Chiropractic care for common conditions in Toledo, Ohio">
     <p>
-      Dr. Jared Mainous, DC, and the team at Toledo Holistic Healthcare provide drug-free, holistic care for a wide range of conditions affecting patients throughout Toledo and NW Ohio.
+      Dr. Jared Mainous, DC, provides drug-free, holistic care for the conditions patients throughout Toledo and NW Ohio bring to us most often. Choose a condition to read how we treat it.
     </p>
   </PageHero>
 
   <section class="section-padding bg-white">
-    <div class="container-narrow space-y-16">
+    <div class="container-narrow grid grid-cols-1 sm:grid-cols-2 gap-8">
       {
         conditions.map((condition) => (
-          <article id={condition.slug} class="scroll-mt-24">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div class="lg:col-span-2">
-                <figure class="overflow-hidden rounded-2xl mb-6">
-                  <img
-                    src={condition.image}
-                    alt=""
-                    width="1000"
-                    height="750"
-                    class="w-full aspect-[16/9] object-cover"
-                  />
-                </figure>
-                <h2 class="text-2xl md:text-3xl font-serif mb-4">{condition.name}</h2>
-                <p class="text-teal-700 font-medium mb-4">{condition.shortDescription}</p>
-                {condition.description.split('\n\n').map((p) => (
-                  <p class="text-warm-700 leading-relaxed mb-4">{p}</p>
-                ))}
+          <article id={condition.slug} class="scroll-mt-24 overflow-hidden rounded-2xl border border-sage-200 bg-cream-50">
+            <a href={`/conditions/${condition.slug}`} class="group block">
+              <img
+                src={condition.image}
+                alt={condition.imageAlt}
+                width="1000"
+                height="750"
+                class="w-full aspect-[16/10] object-cover"
+              />
+              <div class="p-6">
+                <h2 class="text-2xl font-serif mb-2 group-hover:text-teal-700 transition-colors">{condition.name}</h2>
+                <p class="text-warm-700 leading-relaxed mb-4">{condition.shortDescription}</p>
+                <span class="text-teal-700 font-semibold text-sm">Read more →</span>
               </div>
-              <aside class="bg-sage-50 rounded-2xl p-6 border border-sage-200 h-fit">
-                <h3 class="font-serif text-lg mb-4">Related Services</h3>
-                <ul class="space-y-2">
-                  {condition.relatedServices.map((slug) => {
-                    const service = services.find((s) => s.slug === slug);
-                    return service ? (
-                      <li>
-                        <a
-                          href={`/services/${service.slug}`}
-                          class="text-teal-700 hover:text-teal-600 text-sm font-medium"
-                        >
-                          {service.name}
-                        </a>
-                      </li>
-                    ) : null;
-                  })}
-                </ul>
-                <div class="mt-6">
-                  <Button href="/contact" size="sm" class="w-full text-center">
-                    Book Appointment
-                  </Button>
-                </div>
-              </aside>
-            </div>
-            <hr class="mt-16 border-sage-200" />
+            </a>
           </article>
         ))
       }

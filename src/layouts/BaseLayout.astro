@@ -10,6 +10,8 @@ interface Props {
   description: string;
   path?: string;
   ogType?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
   noindex?: boolean;
   schema?: ReturnType<typeof buildPageSchema>;
   breadcrumbs?: { name: string; path: string }[];
@@ -20,6 +22,8 @@ const {
   description,
   path = '/',
   ogType = 'website',
+  ogImage = '/images/tol-office.webp',
+  ogImageAlt = 'Toledo Holistic Healthcare office at 2828 W Central Ave, Suite 1, Toledo, Ohio',
   noindex = false,
   schema,
   breadcrumbs,
@@ -27,6 +31,7 @@ const {
 
 const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
 const canonical = `${site.url}${path}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${site.url}${ogImage}`;
 ---
 
 <!doctype html>
@@ -46,13 +51,15 @@ const canonical = `${site.url}${path}`;
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={`${site.url}/images/toledo-hero.webp`} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${site.url}/images/toledo-hero.webp`} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

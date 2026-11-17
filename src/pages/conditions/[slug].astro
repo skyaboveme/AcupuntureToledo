@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import PageHero from '../../components/PageHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import Button from '../../components/Button.astro';
+import { conditions } from '../../data/conditions';
+import { services } from '../../data/services';
+import { buildPageSchema } from '../../lib/schema';
+import { seo } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return conditions.map((condition) => ({
+    params: { slug: condition.slug },
+    props: { condition },
+  }));
+}
+
+const { condition } = Astro.props;
+
+const pageSeo = seo({
+  title: condition.seoTitle,
+  description: condition.seoDescription,
+  path: `/conditions/${condition.slug}`,
+});
+
+const relatedServices = condition.relatedServices
+  .map((slug) => services.find((s) => s.slug === slug))
+  .filter((s): s is (typeof services)[number] => Boolean(s));
+
+const schema = buildPageSchema({
+  description: pageSeo.description,
+  path: `/conditions/${condition.slug}`,
+  condition: {
+    name: condition.name,
+    description: condition.description,
+    slug: condition.slug,
+  },
+  faqs: [...condition.faqs],
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Conditions', path: '/conditions' },
+    { name: condition.name, path: `/conditions/${condition.slug}` },
+  ],
+});
+---
+
+<BaseLayout
+  title={pageSeo.title}
+  description={pageSeo.description}
+  path={`/conditions/${condition.slug}`}
+  ogImage={condition.image}
+  ogImageAlt={condition.imageAlt}
+  schema={schema}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Conditions', path: '/conditions' },
+    { name: condition.name, path: `/conditions/${condition.slug}` },
+  ]}
+>
+  <PageHero title={condition.name} image={condition.image} alt={condition.imageAlt}>
+    <p>{condition.shortDescription}</p>
+  </PageHero>
+
+  <section class="section-padding bg-white">
+    <div class="container-narrow">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-6">
+          <figure class="overflow-hidden rounded-2xl">
+            <img
+              src={condition.image}
+              alt={condition.imageAlt}
+              width="1000"
+              height="750"
+              class="w-full aspect-[16/9] object-cover"
+            />
+          </figure>
+          <h2 class="text-2xl font-serif">{condition.name} care in Toledo</h2>
+          {condition.description.split('\n\n').map((paragraph) => (
+            <p class="text-warm-700 leading-relaxed">{paragraph}</p>
+          ))}
+
+          <div class="pt-4">
+            <h2 class="text-2xl font-serif mb-4">Questions patients ask</h2>
+            <FAQAccordion items={[...condition.faqs]} />
+          </div>
+        </div>
+
+        <aside class="space-y-8">
+          <div class="bg-sage-50 rounded-2xl p-6 border border-sage-200">
+            <h3 class="font-serif text-lg mb-4">Related Services</h3>
+            <ul class="space-y-2">
+              {
+                relatedServices.map((service) => (
+                  <li>
+                    <a href={`/services/${service.slug}`} class="text-teal-700 hover:text-teal-600 text-sm font-medium">
+                      {service.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="mt-6">
+              <Button href="/contact" size="sm" class="w-full text-center">
+                Book Appointment
+              </Button>
+            </div>
+          </div>
+          <p class="text-sm text-sage-600">
+            Serving Toledo, Sylvania, Maumee, Perrysburg, Oregon, and NW Ohio from 2828 W Central Ave, Suite 1.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

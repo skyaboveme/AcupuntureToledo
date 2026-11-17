@@ -28,13 +28,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/services"
+  ogImage="/images/1920-chiro-014.webp"
+  ogImageAlt="Holistic health services at Toledo Holistic Healthcare in Toledo, Ohio"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
   ]}
 >
-  <PageHero title="Our Services" image="/images/1920-chiro-014.webp">
+  <PageHero title="Our Services" image="/images/1920-chiro-014.webp" alt="Holistic chiropractic and acupuncture services in Toledo, Ohio">
     <p>
       Toledo Holistic Healthcare offers a comprehensive range of holistic health services. Each treatment is tailored to your individual needs, combining Eastern healing wisdom with modern clinical expertise.
     </p>
@@ -48,7 +50,7 @@ const schema = buildPageSchema({
             <article class="overflow-hidden rounded-2xl border border-sage-200 hover:border-teal-400 hover:shadow-md transition-all bg-cream-50">
               <img
                 src={service.image}
-                alt=""
+                alt={service.imageAlt}
                 width="800"
                 height="600"
                 class="w-full aspect-[16/10] object-cover"

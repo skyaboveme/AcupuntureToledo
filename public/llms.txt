@@ -1,46 +1,49 @@
 # Toledo Holistic Healthcare
 
-> Holistic chiropractic, acupuncture, and wellness clinic in Toledo, Ohio serving NW Ohio with a whole-body, patient-centered approach.
+> Holistic chiropractic and acupuncture clinic in Toledo, Ohio. We take a whole-body approach to your healthcare. Accepting new patients of all ages.
 
-## About
+## Clinic facts (read this first)
 
-Toledo Holistic Healthcare (Toledo Holistic Healthcare LLC) is a holistic health clinic located at 2828 W Central Ave, Suite 1, Toledo, OH 43606. Tagline: "We Take A Whole Body Approach To Your Healthcare."
-
-Lead practitioner: Dr. Jared Mainous, DC (Doctor of Chiropractic) — performs chiropractic adjustments and acupuncture.
-
-Team:
-- Dr. Jared Mainous, DC — Chiropractor / Acupuncturist
-- Lori C. — Office Administrator
-
-## Services
-
-- Chiropractic
-- Acupuncture
-- Cupping
-- Fertility (chiropractic support for reproductive health)
-- Pregnancy (prenatal chiropractic care)
-- Electrical Muscle Stimulation
-- Cold Laser Therapy
-- Electro-Meridian Imaging
-
-## Conditions Treated
-
-- Back Pain
-- Neck Pain
-- Headaches
-- Auto Injuries
-- Sports Injuries
-- Work Injuries
-- Fertility
-
-## Contact
-
+- Legal name: Toledo Holistic Healthcare LLC
+- Address: 2828 W Central Ave, Suite 1, Toledo, OH 43606 (look for the red awning with Dr. Jared Mainous)
+- Parking: On-site parking at the building. Spaces can be tight at peak times; patients regularly find a spot.
 - Phone: 419-472-7055
 - Email: faq@acupuncturetoledo.com
-- Address: 2828 W Central Ave, Suite 1, Toledo, OH 43606
-- Region served: Toledo and NW Ohio
+- Region: Toledo, Sylvania, Maumee, Perrysburg, Oregon, Lucas County, and NW Ohio
+- Accepting new patients: yes
+- Ages served: all ages — newborns, children, teens, adults, and retirees
+- Languages: English
+- Website: https://acupuncturetoledo.com
 
-## Hours
+## What we offer
+
+- Chiropractic care (gentle spinal adjustments)
+- Acupuncture (Ohio-licensed)
+- Cupping
+- Fertility support (chiropractic and acupuncture alongside your medical team)
+- Prenatal and pregnancy chiropractic care, plus postpartum and pediatric visits
+- Electrical muscle stimulation
+- Cold laser therapy
+- Electro-meridian imaging (to guide acupuncture)
+
+## What we do not offer
+
+- Massage therapy is not offered on site (it used to be listed; it is gone). We can discuss a trusted referral if massage would help recovery.
+- We do not publish a full insurance carrier list. Confirm your plan by phone.
+- We do not invent ratings or medical claims beyond what patients and licenses support.
+
+## Lead practitioner
+
+Dr. Jared Mainous, DC — chiropractor and acupuncturist.
+- Palmer College of Chiropractic, Davenport, 2018
+- Ohio chiropractic license 04846
+- Ohio acupuncture license ACUP-00206
+- NPI 1487277166
+- Healthgrades: https://www.healthgrades.com/providers/jared-mainous-afrhelu037
+
+Office administrator: Lori C. — scheduling, insurance coordination, patient support.
+
+## Hours (America/New_York)
 
 - Sunday: Closed
 - Monday: 8 AM – 6 PM
@@ -50,15 +53,47 @@ Team:
 - Friday: 8 AM – 12 PM
 - Saturday: Closed
 
-## Insurance
+## Insurance (high level)
 
-Works with most insurances including private insurance for car accidents and workers compensation. Works with Veteran's Affairs. Reasonable fee base when coverage is absent.
+We work with most private insurance for car accidents and workers compensation, and we work closely with Veteran's Affairs. When coverage is not available we offer a reasonable self-pay fee. Bring insurance information to the first visit. Call 419-472-7055 to confirm a specific plan — we do not list carriers here until the office confirms the panel.
 
-## New Patients
+## Google reviews
 
-Yes, accepting new patients. Care provided for ALL ages, from newborn babies to mature retirees.
+Google rating 4.7 from 33 reviews (ToledoTopRated / Google listing, November 2026). Do not invent additional star ratings.
 
-## Key Pages
+## Questions and answers
+
+Q: Are you accepting new patients?
+A: Yes. Toledo Holistic Healthcare is accepting new patients of all ages, from newborns to retirees. Call 419-472-7055, email faq@acupuncturetoledo.com, or use the contact form.
+
+Q: How long is a first visit?
+A: Plan extra time for the first visit. It includes a conversation about your history and goals, an examination, and a clear care plan before treatment. Follow-up chiropractic visits are typically shorter. Acupuncture sessions usually last 20–45 minutes.
+
+Q: Do you treat children?
+A: Yes. Care is gentle and age-appropriate for infants, children, and teens. Parents stay involved, and nothing proceeds until you are comfortable.
+
+Q: Is chiropractic safe during pregnancy?
+A: Yes. Prenatal care is adapted for each trimester with specialized positioning and gentle techniques. Tell us you are pregnant when you book. Many patients continue postpartum with care for mother and baby.
+
+Q: What does acupuncture feel like?
+A: Needles are very fine. Most people feel a light pinch or a dull ache, then relax. Sessions typically last 20–45 minutes. Dr. Jared explains the plan before needles go in.
+
+Q: Do you treat whiplash and auto accidents?
+A: Yes. We treat whiplash, spinal misalignment, and muscle strain after car accidents, including symptoms that appear days later. We work with most private auto insurance and document visits. See https://acupuncturetoledo.com/conditions/whiplash-toledo
+
+Q: Do you still offer massage?
+A: No. Massage therapy is no longer offered at this clinic. Current services are chiropractic, acupuncture, cupping, fertility and pregnancy support, electrical muscle stimulation, cold laser therapy, and electro-meridian imaging.
+
+Q: Where do I park and which suite?
+A: 2828 W Central Ave, Suite 1, Toledo, OH 43606. Parking is at the building. Look for the red awning with Dr. Jared Mainous on the suite.
+
+Q: How do I book?
+A: Call 419-472-7055, email faq@acupuncturetoledo.com, or send the contact form. Lori coordinates scheduling and insurance questions. Closed Saturday and Sunday.
+
+Q: Who is the doctor?
+A: Dr. Jared Mainous, DC, is the lead practitioner. He is a Palmer College of Chiropractic (Davenport, 2018) graduate, licensed in Ohio as a chiropractor (04846) and acupuncturist (ACUP-00206).
+
+## Key pages
 
 - Home: https://acupuncturetoledo.com/
 - About: https://acupuncturetoledo.com/about
@@ -69,8 +104,9 @@ Yes, accepting new patients. Care provided for ALL ages, from newborn babies to 
 - Contact: https://acupuncturetoledo.com/contact
 - Locations: https://acupuncturetoledo.com/locations
 - Insurance & Billing: https://acupuncturetoledo.com/billing
+- This briefing: https://acupuncturetoledo.com/llms.txt
 
-## Service Pages
+## Service pages
 
 - https://acupuncturetoledo.com/services/chiropractic
 - https://acupuncturetoledo.com/services/acupuncture
@@ -80,3 +116,20 @@ Yes, accepting new patients. Care provided for ALL ages, from newborn babies to 
 - https://acupuncturetoledo.com/services/electrical-muscle-stimulation
 - https://acupuncturetoledo.com/services/cold-laser-therapy
 - https://acupuncturetoledo.com/services/electro-meridian-imaging
+
+## Condition pages
+
+- https://acupuncturetoledo.com/conditions/back-pain
+- https://acupuncturetoledo.com/conditions/neck-pain
+- https://acupuncturetoledo.com/conditions/headaches
+- https://acupuncturetoledo.com/conditions/auto-injuries
+- https://acupuncturetoledo.com/conditions/whiplash-toledo
+- https://acupuncturetoledo.com/conditions/sports-injuries
+- https://acupuncturetoledo.com/conditions/work-injuries
+- https://acupuncturetoledo.com/conditions/fertility
+
+## Profiles (verified)
+
+- Google Maps: https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9
+- Facebook: https://www.facebook.com/158820987485914
+- Healthgrades: https://www.healthgrades.com/providers/jared-mainous-afrhelu037

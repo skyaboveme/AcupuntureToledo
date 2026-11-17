@@ -2,9 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import PageHero from '../components/PageHero.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
 import { site } from '../data/site';
+import { faqs } from '../data/faq';
 import { buildPageSchema } from '../lib/schema';
 import { seo } from '../lib/seo';
+
+const billingFaqs = faqs.filter((faq) =>
+  /insurance|accident|workers|massage|book/i.test(faq.question)
+);
 
 const pageSeo = seo({
   title: 'Insurance & Billing — Toledo Holistic Healthcare',
@@ -16,6 +22,7 @@ const pageSeo = seo({
 const schema = buildPageSchema({
   description: pageSeo.description,
   path: '/billing',
+  faqs: billingFaqs,
   breadcrumbs: [
     { name: 'Home', path: '/' },
     { name: 'Insurance & Billing', path: '/billing' },
@@ -27,13 +34,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/billing"
+  ogImage="/images/1920-chiro-040.webp"
+  ogImageAlt="Insurance and billing support at Toledo Holistic Healthcare in Toledo, Ohio"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Insurance & Billing', path: '/billing' },
   ]}
 >
-  <PageHero title="Insurance & Billing" image="/images/1920-chiro-040.webp">
+  <PageHero title="Insurance & Billing" image="/images/1920-chiro-040.webp" alt="Insurance coordination at Toledo Holistic Healthcare in Toledo, Ohio">
     <p>
       We work with most insurances including private insurance for car accidents and workers compensation. We work closely with Veteran's Affairs to ensure veterans get the care they deserve. We also provide a very reasonable fee base in the absence of coverage.
     </p>
@@ -62,8 +71,8 @@ const schema = buildPageSchema({
           <li class="flex gap-2"><span class="text-teal-600" aria-hidden="true">✓</span> Veteran's Affairs</li>
           <li class="flex gap-2"><span class="text-teal-600" aria-hidden="true">✓</span> Reasonable self-pay fees when coverage is absent</li>
         </ul>
-        <p class="text-sm text-sage-600 mt-6 italic">
-          TODO: Add a specific insurance panel list (carrier names) once the office confirms which plans are in-network.
+        <p class="text-sm text-sage-700 mt-6">
+          We do not publish a full carrier list here. Call {site.phone} so Lori can confirm whether your plan applies before you come in.
         </p>
       </div>
       <div class="bg-sage-50 rounded-2xl p-8 border border-sage-200">
@@ -78,6 +87,13 @@ const schema = buildPageSchema({
           Call {site.phone}
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-cream-50">
+    <div class="container-narrow max-w-3xl">
+      <h2 class="text-2xl font-serif mb-6">Billing questions patients ask</h2>
+      <FAQAccordion items={billingFaqs} />
     </div>
   </section>
 

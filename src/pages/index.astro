@@ -23,6 +23,7 @@ const schema = buildPageSchema({
   description: pageSeo.description,
   path: '/',
   includePhysician: true,
+  faqs: faqs.slice(0, 6),
 });
 ---
 
@@ -30,13 +31,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/"
+  ogImage="/images/1920-chiro-004.webp"
+  ogImageAlt="Chiropractic care at Toledo Holistic Healthcare in Toledo, Ohio"
   schema={schema}
 >
   <!-- Hero -->
   <section class="relative bg-sage-900 text-white overflow-hidden">
     <img
       src="/images/1920-chiro-004.webp"
-      alt=""
+      alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
       class="absolute inset-0 w-full h-full object-cover opacity-35"
       width="1920"
       height="800"
@@ -71,7 +74,7 @@ const schema = buildPageSchema({
       <figure class="overflow-hidden rounded-2xl">
         <img
           src="/images/1000-chiro-036.webp"
-          alt="Gentle chiropractic care at Toledo Holistic Healthcare"
+          alt="Dr. Jared Mainous adjusting a patient at Toledo Holistic Healthcare in Toledo, Ohio"
           width="1000"
           height="750"
           class="w-full aspect-[4/3] object-cover"
@@ -107,7 +110,7 @@ const schema = buildPageSchema({
             >
               <img
                 src={service.image}
-                alt=""
+                alt={service.imageAlt}
                 width="800"
                 height="600"
                 class="w-full aspect-[4/3] object-cover"
@@ -144,12 +147,12 @@ const schema = buildPageSchema({
         {
           conditions.map((condition) => (
             <a
-              href={`/conditions#${condition.slug}`}
+              href={`/conditions/${condition.slug}`}
               class="group relative overflow-hidden rounded-2xl min-h-[14rem] flex items-end"
             >
               <img
                 src={condition.image}
-                alt=""
+                alt={condition.imageAlt}
                 width="800"
                 height="600"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -194,7 +197,7 @@ const schema = buildPageSchema({
       <figure class="overflow-hidden rounded-2xl">
         <img
           src="/images/fam-002.webp"
-          alt="Dr. Jared Mainous, DC, with his family"
+          alt="Dr. Jared Mainous, DC, with his family in the Toledo area"
           width="1000"
           height="1000"
           class="w-full h-full object-cover"
