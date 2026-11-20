@@ -5,15 +5,15 @@ export const conditions = [
     slug: 'back-pain',
     name: 'Back Pain',
     image: '/images/1000-chiro-056.webp',
-    imageAlt: 'Dr. Jared Mainous adjusting a patient for back pain at Toledo Holistic Healthcare in Toledo, Ohio',
+    imageAlt: 'Chiropractic adjustment for back pain at Toledo Holistic Healthcare in Toledo, Ohio',
     seoTitle: 'Back Pain Chiropractor in Toledo, OH',
     seoDescription:
-      'Drug-free chiropractic and acupuncture for back pain in Toledo and NW Ohio. Dr. Jared Mainous, DC, treats the cause—not just symptoms. Call 419-472-7055.',
+      'Drug-free chiropractic and acupuncture for back pain in Toledo and NW Ohio. Dr. Allen Beck treats the cause—not just symptoms. Call 419-472-7055.',
     shortDescription:
       'Caused by poor posture, spinal misalignment, or injury; chiropractic relieves discomfort and restores mobility naturally.',
     description: `Back pain is one of the most common reasons patients visit Toledo Holistic Healthcare. Whether your discomfort stems from poor posture, spinal misalignment, a workplace injury, or everyday strain, chronic back pain can limit your mobility and quality of life.
 
-Dr. Jared Mainous, DC, uses gentle chiropractic adjustments to address the root cause of your pain—not just mask symptoms. By restoring proper spinal alignment and nervous system function, we help your body heal naturally. Many Toledo and NW Ohio patients find lasting relief without relying on medication.
+Dr. Allen Beck uses gentle chiropractic adjustments to address the root cause of your pain—not just mask symptoms. By restoring proper spinal alignment and nervous system function, we help your body heal naturally. Many Toledo and NW Ohio patients find lasting relief without relying on medication.
 
 We also integrate complementary therapies such as acupuncture and cold laser therapy when appropriate to support your recovery.`,
     relatedServices: ['chiropractic', 'acupuncture', 'cold-laser-therapy'],
@@ -21,7 +21,7 @@ We also integrate complementary therapies such as acupuncture and cold laser the
       {
         question: 'Can a chiropractor in Toledo help with lower back pain?',
         answer:
-          'Yes. Dr. Jared Mainous, DC, uses gentle adjustments to restore spinal alignment and nervous system function, which often reduces back pain from posture, strain, or injury. Acupuncture and cold laser therapy may be added when they support recovery. Your first visit includes an exam so care is matched to the cause, not just the sore spot.',
+          'Yes. Dr. Allen Beck uses gentle adjustments to restore spinal alignment and nervous system function, which often reduces back pain from posture, strain, or injury. Acupuncture and cold laser therapy may be added when they support recovery. Your first visit includes an exam so care is matched to the cause, not just the sore spot.',
       },
       {
         question: 'Do I need a referral for back pain treatment?',
@@ -42,7 +42,7 @@ We also integrate complementary therapies such as acupuncture and cold laser the
       'Often from stress, poor posture, or whiplash; adjustments restore function and relieve tension.',
     description: `Neck pain frequently results from stress, poor posture, prolonged desk work, or whiplash from auto accidents. Tension in the cervical spine can radiate into your shoulders, cause headaches, and restrict your range of motion.
 
-Our chiropractic care focuses on restoring proper neck alignment and relieving muscle tension. Dr. Jared takes a gentle, patient-centered approach—especially important for patients recovering from whiplash or chronic stress-related tension.
+Our chiropractic care focuses on restoring proper neck alignment and relieving muscle tension. Dr. Allen Beck takes a gentle, patient-centered approach—especially important for patients recovering from whiplash or chronic stress-related tension.
 
 If you are in the Toledo area and struggling with neck pain, we can help you regain comfort and mobility through drug-free, holistic care.`,
     relatedServices: ['chiropractic', 'acupuncture'],
@@ -98,7 +98,7 @@ At Toledo Holistic Healthcare, we assess your spine, posture, and lifestyle fact
       'Whiplash, spinal misalignment, and muscle strain after car accidents; adjustments speed recovery.',
     description: `Car accidents can cause whiplash, spinal misalignment, muscle strain, and lingering pain that may not appear until days or weeks later. Prompt chiropractic care after an auto injury can speed recovery and prevent chronic issues from developing.
 
-We work with most private insurance for car accidents and coordinate care to document your progress. Dr. Jared's gentle techniques are well-suited for patients recovering from collision-related injuries throughout the Toledo area.`,
+We work with most private insurance for car accidents and coordinate care to document your progress. Dr. Allen Beck's gentle techniques are well-suited for patients recovering from collision-related injuries throughout the Toledo area.`,
     relatedServices: ['chiropractic', 'acupuncture', 'electrical-muscle-stimulation', 'cold-laser-therapy'],
     faqs: [
       {
@@ -118,7 +118,7 @@ We work with most private insurance for car accidents and coordinate care to doc
     name: 'Whiplash',
     image: '/images/1000-chiro-059.webp',
     imageAlt:
-      'Dr. Jared Mainous, DC, providing gentle neck care for whiplash at Toledo Holistic Healthcare in Toledo, Ohio',
+      'Gentle neck care for whiplash at Toledo Holistic Healthcare in Toledo, Ohio',
     seoTitle: 'Whiplash Chiropractor in Toledo, OH',
     seoDescription:
       'Whiplash chiropractor in Toledo for delayed neck pain, headaches, and stiffness after a car accident. Auto insurance welcome. Call 419-472-7055.',
@@ -126,7 +126,7 @@ We work with most private insurance for car accidents and coordinate care to doc
       'Neck pain, stiffness, and headaches after a collision—even days later. Gentle chiropractic care in Toledo.',
     description: `Whiplash is one of the most common injuries we treat after car accidents in Toledo and NW Ohio. The rapid forward-and-back motion of a crash can strain the cervical spine, ligaments, and muscles. Pain, headaches, dizziness, and limited range of motion often appear a day or two later—not always at the scene.
 
-Dr. Jared Mainous, DC, uses gentle, patient-centered adjustments rather than aggressive twisting. Care may include acupuncture, electrical muscle stimulation, or cold laser therapy when soft tissue needs extra support. We document findings for auto insurance and workers compensation when those apply.
+Dr. Allen Beck uses gentle, patient-centered adjustments rather than aggressive twisting. Care may include acupuncture, electrical muscle stimulation, or cold laser therapy when soft tissue needs extra support. We document findings for auto insurance and workers compensation when those apply.
 
 If you were in a collision anywhere in Lucas County, you do not need a referral to book. Call 419-472-7055 as soon as you can. Related auto-injury care is also covered on our auto injuries page.`,
     relatedServices: ['chiropractic', 'acupuncture', 'electrical-muscle-stimulation', 'cold-laser-therapy'],
@@ -134,7 +134,7 @@ If you were in a collision anywhere in Lucas County, you do not need a referral 
       {
         question: 'Do I need to see a whiplash chiropractor in Toledo if I felt fine after the crash?',
         answer:
-          'Yes, it is still worth an exam. Whiplash symptoms often show up 24–72 hours later as neck stiffness, headaches, or shoulder pain. Early care can reduce the chance those symptoms become chronic. Dr. Jared will examine your neck before any adjustment and explain the plan first.',
+          'Yes, it is still worth an exam. Whiplash symptoms often show up 24–72 hours later as neck stiffness, headaches, or shoulder pain. Early care can reduce the chance those symptoms become chronic. Dr. Allen Beck will examine your neck before any adjustment and explain the plan first.',
       },
       {
         question: 'Will you work with my auto accident insurance?',
@@ -171,7 +171,7 @@ Our holistic approach combines chiropractic adjustments, soft tissue therapies, 
       {
         question: 'How soon can I return to activity?',
         answer:
-          'That depends on the injury. We focus on reducing pain and restoring function without rushing you back in a way that causes re-injury. Dr. Jared will give you a clear next step after the exam.',
+          'That depends on the injury. We focus on reducing pain and restoring function without rushing you back in a way that causes re-injury. Dr. Allen Beck will give you a clear next step after the exam.',
       },
     ] satisfies FAQ[],
   },
@@ -214,7 +214,7 @@ We work with workers compensation insurance and develop care plans that address 
       'Adjustments help improve nervous system function, key to reproductive health.',
     description: `Chiropractic care can play a supportive role in reproductive health by optimizing nervous system function—a key factor in fertility. Spinal misalignments may interfere with the communication between your brain and reproductive organs.
 
-Dr. Jared provides gentle, holistic chiropractic support for patients on their fertility journey in the Toledo area. We work alongside your existing medical team and take a whole-body approach to support your reproductive wellness goals.`,
+Dr. Allen Beck provides gentle, holistic chiropractic support for patients on their fertility journey in the Toledo area. We work alongside your existing medical team and take a whole-body approach to support your reproductive wellness goals.`,
     relatedServices: ['chiropractic', 'acupuncture', 'fertility'],
     faqs: [
       {

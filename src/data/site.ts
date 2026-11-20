@@ -19,8 +19,8 @@ export const site = {
     latitude: 41.677592,
     longitude: -83.612074,
   },
+  // Steve: add Dr. Allen Beck's own profile URLs. The previous Healthgrades page was the prior doctor's and was removed.
   sameAs: [
-    'https://www.healthgrades.com/providers/jared-mainous-afrhelu037',
     'https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9',
     'https://www.facebook.com/158820987485914',
   ],

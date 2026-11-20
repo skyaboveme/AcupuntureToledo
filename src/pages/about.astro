@@ -11,7 +11,7 @@ import { seo } from '../lib/seo';
 const pageSeo = seo({
   title: 'About Our Team — Chiropractic & Acupuncture in Toledo',
   description:
-    'Meet Dr. Jared Mainous, DC, and Lori C. at Toledo Holistic Healthcare. Experienced, licensed practitioners serving Toledo and NW Ohio.',
+    'Meet Dr. Allen Beck and Lori C. at Toledo Holistic Healthcare. Experienced, licensed practitioners serving Toledo and NW Ohio.',
   path: '/about',
 });
 
@@ -30,15 +30,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/about"
-  ogImage="/images/fam-003.webp"
-  ogImageAlt="Dr. Jared Mainous, DC, with his family in the Toledo area"
+  ogImage="/images/1920-chiro-004.webp"
+  ogImageAlt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
   ]}
 >
-  <PageHero title="About Toledo Holistic Healthcare" image="/images/fam-003.webp" alt="Dr. Jared Mainous, DC, and his family">
+  <PageHero title="About Toledo Holistic Healthcare" image="/images/1920-chiro-004.webp" alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare">
     <p>
       {site.name} is a holistic wellness clinic in Toledo, Ohio, dedicated to patient-centered care for the whole person—mind, body, and spirit.
     </p>
@@ -48,8 +48,8 @@ const schema = buildPageSchema({
     <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <figure class="overflow-hidden rounded-2xl">
         <img
-          src="/images/fam-002.webp"
-          alt="Dr. Jared Mainous, DC, with his family in the Toledo area"
+          src="/images/1920-chiro-004.webp"
+          alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
           width="1000"
           height="1000"
           class="w-full object-cover"
@@ -84,11 +84,13 @@ const schema = buildPageSchema({
               <div class:list={[index % 2 === 1 && 'lg:order-1']}>
                 <h3 class="text-2xl md:text-3xl font-serif mb-2">{member.name}</h3>
                 <p class="text-teal-700 font-semibold mb-4">{member.role}</p>
-                <ul class="flex flex-wrap gap-2 mb-6">
-                  {member.credentials.map((cred) => (
-                    <li class="text-xs bg-sage-100 text-sage-700 px-3 py-1 rounded-full">{cred}</li>
-                  ))}
-                </ul>
+                {member.credentials.length > 0 && (
+                  <ul class="flex flex-wrap gap-2 mb-6">
+                    {member.credentials.map((cred) => (
+                      <li class="text-xs bg-sage-100 text-sage-700 px-3 py-1 rounded-full">{cred}</li>
+                    ))}
+                  </ul>
+                )}
                 {member.bio.split('\n\n').map((paragraph) => (
                   <p class="text-warm-700 leading-relaxed mb-4">{paragraph}</p>
                 ))}

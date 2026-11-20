@@ -13,6 +13,7 @@ const pageSeo = seo({
   path: '/locations',
 });
 
+// Steve: tol-office.webp stays off this page until the red awning no longer shows the previous doctor's name.
 const schema = buildPageSchema({
   description: pageSeo.description,
   path: '/locations',
@@ -27,15 +28,15 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/locations"
-  ogImage="/images/tol-office.webp"
-  ogImageAlt="Toledo Holistic Healthcare office at 2828 W Central Ave, Suite 1, Toledo, Ohio"
+  ogImage="/images/1920-chiro-004.webp"
+  ogImageAlt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Locations', path: '/locations' },
   ]}
 >
-  <PageHero title="Our Toledo Location" image="/images/tol-office.webp" alt="Toledo Holistic Healthcare office at 2828 W Central Ave, Suite 1, Toledo, Ohio">
+  <PageHero title="Our Toledo Location" image="/images/1920-chiro-004.webp" alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare">
     <p>
       Toledo Holistic Healthcare is a chiropractic and acupuncture clinic located in Toledo. We serve Lucas County and the surrounding areas of NW Ohio.
     </p>
@@ -43,16 +44,7 @@ const schema = buildPageSchema({
 
   <section class="section-padding bg-white">
     <div class="container-narrow">
-      <article class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <figure class="overflow-hidden rounded-2xl bg-sage-100">
-          <img
-            src="/images/tol-office.webp"
-            alt="Toledo Holistic Healthcare office at 2828 W Central Ave"
-            width="800"
-            height="520"
-            class="w-full h-full object-cover"
-          />
-        </figure>
+      <article>
         <div>
           <h2 class="text-2xl font-serif mb-4">Toledo Office</h2>
           <address class="not-italic text-warm-700 leading-relaxed mb-6">

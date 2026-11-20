@@ -74,7 +74,7 @@ const schema = buildPageSchema({
       <figure class="overflow-hidden rounded-2xl">
         <img
           src="/images/1000-chiro-036.webp"
-          alt="Dr. Jared Mainous adjusting a patient at Toledo Holistic Healthcare in Toledo, Ohio"
+          alt="Chiropractic adjustment at Toledo Holistic Healthcare in Toledo, Ohio"
           width="1000"
           height="750"
           class="w-full aspect-[4/3] object-cover"
@@ -86,7 +86,7 @@ const schema = buildPageSchema({
           There is no one adjustment or treatment plan that fits everyone. When you visit, we take time to listen and build care that fits your body, your goals, and your life.
         </p>
         <p class="text-warm-700 leading-relaxed">
-          Dr. Jared Mainous, DC, blends chiropractic and acupuncture so you can get relief, stay aligned, and feel like yourself again—without a rushed, one-size-fits-all visit.
+          Dr. Allen Beck blends chiropractic and acupuncture so you can get relief, stay aligned, and feel like yourself again—without a rushed, one-size-fits-all visit.
         </p>
       </div>
     </div>
@@ -196,8 +196,8 @@ const schema = buildPageSchema({
     <div class="container-narrow grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <figure class="overflow-hidden rounded-2xl">
         <img
-          src="/images/fam-002.webp"
-          alt="Dr. Jared Mainous, DC, with his family in the Toledo area"
+          src="/images/1920-chiro-004.webp"
+          alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
           width="1000"
           height="1000"
           class="w-full h-full object-cover"
@@ -206,40 +206,32 @@ const schema = buildPageSchema({
       <div>
         <h2 class="text-3xl md:text-4xl font-serif mb-4">Care for the Whole Family</h2>
         <p class="text-warm-700 leading-relaxed mb-4">
-          From newborns to grandparents, we provide gentle chiropractic and acupuncture care tailored to every stage of life. Dr. Jared is a family-friendly provider who takes time to understand your body and your goals.
+          From newborns to grandparents, we provide gentle chiropractic and acupuncture care tailored to every stage of life. Dr. Allen Beck is a family-friendly provider who takes time to understand your body and your goals.
         </p>
         <p class="text-warm-700 leading-relaxed mb-6">
           Visit our Toledo office at 2828 W Central Ave, Suite 1 — a convenient location serving Lucas County and NW Ohio.
         </p>
-        <figure class="overflow-hidden rounded-2xl mb-6">
-          <img
-            src="/images/tol-office.webp"
-            alt="Toledo Holistic Healthcare office at 2828 W Central Ave"
-            width="800"
-            height="520"
-            class="w-full h-56 object-cover"
-          />
-        </figure>
         <Button href="/about">Meet the Team</Button>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Preview -->
-  <section class="section-padding bg-cream-50">
-    <div class="container-narrow">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-serif mb-4">What Our Patients Say</h2>
-        <p class="text-warm-700 text-lg">Real reviews from patients in Toledo and NW Ohio.</p>
+  {testimonials.length > 0 && (
+    <section class="section-padding bg-cream-50">
+      <div class="container-narrow">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-serif mb-4">What Our Patients Say</h2>
+          <p class="text-warm-700 text-lg">Real reviews from patients in Toledo and NW Ohio.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.slice(0, 3).map((t) => <TestimonialCard quote={t.quote} author={t.author} />)}
+        </div>
+        <div class="text-center mt-10">
+          <Button href="/testimonials" variant="outline">Read All Testimonials</Button>
+        </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {testimonials.slice(0, 3).map((t) => <TestimonialCard quote={t.quote} author={t.author} />)}
-      </div>
-      <div class="text-center mt-10">
-        <Button href="/testimonials" variant="outline">Read All Testimonials</Button>
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- FAQ Preview -->
   <section class="section-padding bg-cream-100">

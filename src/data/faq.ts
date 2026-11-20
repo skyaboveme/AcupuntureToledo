@@ -12,7 +12,7 @@ export const faqs: FAQ[] = [
   {
     question: 'What happens on a first visit?',
     answer:
-      'Your first visit includes a conversation about your health history, concerns, and goals, followed by an examination. Dr. Jared Mainous, DC, explains what he finds and recommends a care plan before any treatment begins. You should leave knowing what to expect at the next visit and how to reach the office with questions.',
+      'Your first visit includes a conversation about your health history, concerns, and goals, followed by an examination. Dr. Allen Beck explains what he finds and recommends a care plan before any treatment begins. You should leave knowing what to expect at the next visit and how to reach the office with questions.',
   },
   {
     question: 'How long do appointments take?',
@@ -22,7 +22,7 @@ export const faqs: FAQ[] = [
   {
     question: 'Is chiropractic care safe for children and infants?',
     answer:
-      'Yes. We provide gentle, age-appropriate care for infants, children, and teens. Techniques are modified for smaller bodies, and Dr. Jared explains every step so parents are comfortable before treatment. Many Toledo families continue care from pregnancy through pediatric wellness visits.',
+      'Yes. We provide gentle, age-appropriate care for infants, children, and teens. Techniques are modified for smaller bodies, and Dr. Allen Beck explains every step so parents are comfortable before treatment. Many Toledo families continue care from pregnancy through pediatric wellness visits.',
   },
   {
     question: 'Can I receive care during pregnancy?',
@@ -32,7 +32,7 @@ export const faqs: FAQ[] = [
   {
     question: 'What does acupuncture feel like?',
     answer:
-      'Acupuncture uses very fine, sterile needles at specific points. Most patients feel little more than a light pinch or a dull ache, and many find the session relaxing. Dr. Jared will not proceed until you are comfortable with the plan. Sessions typically last 20–45 minutes.',
+      'Acupuncture uses very fine, sterile needles at specific points. Most patients feel little more than a light pinch or a dull ache, and many find the session relaxing. Dr. Allen Beck will not proceed until you are comfortable with the plan. Sessions typically last 20–45 minutes.',
   },
   {
     question: 'Do you treat car accident and whiplash injuries?',
@@ -47,7 +47,8 @@ export const faqs: FAQ[] = [
   {
     question: 'Where are you located and is there parking?',
     answer:
-      'We are in Suite 1 at 2828 W Central Ave, Toledo, OH 43606, serving Toledo and NW Ohio. There is parking at the building. Spaces can be tight at busy times, but patients regularly find a spot. Look for the red awning with Dr. Jared Mainous on the suite.',
+      // Steve: confirm the suite awning lettering before adding Dr. Allen Beck's name. The old exterior photo still shows the previous doctor's name on the red awning.
+      'We are in Suite 1 at 2828 W Central Ave, Toledo, OH 43606, serving Toledo and NW Ohio. There is parking at the building. Spaces can be tight at busy times, but patients regularly find a spot. Look for the red awning on the suite.',
   },
   {
     question: 'Do you offer massage therapy?',
