@@ -10,7 +10,7 @@ import { seo } from '../lib/seo';
 const pageSeo = seo({
   title: 'Patient Testimonials — Toledo Holistic Healthcare',
   description:
-    'Read real patient reviews of Dr. Jared Mainous, DC, and Toledo Holistic Healthcare. Chiropractic and acupuncture care in Toledo, NW Ohio.',
+    'Patient testimonials for Toledo Holistic Healthcare. Chiropractic and acupuncture care in Toledo, NW Ohio.',
   path: '/testimonials',
 });
 
@@ -29,27 +29,31 @@ const schema = buildPageSchema({
   title={pageSeo.title}
   description={pageSeo.description}
   path="/testimonials"
-  ogImage="/images/fam-003.webp"
-  ogImageAlt="Dr. Jared Mainous, DC, and his family in the Toledo area"
+  ogImage="/images/1920-chiro-004.webp"
+  ogImageAlt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare"
   schema={schema}
   breadcrumbs={[
     { name: 'Home', path: '/' },
     { name: 'Testimonials', path: '/testimonials' },
   ]}
 >
-  <PageHero title="Patient Testimonials" image="/images/fam-003.webp" alt="Dr. Jared Mainous, DC, and his family in the Toledo area">
-    <p>
-      Hear from real patients who have experienced the difference of holistic, patient-centered care at Toledo Holistic Healthcare.
-    </p>
+  <PageHero title="Patient Testimonials" image="/images/1920-chiro-004.webp" alt="Patient receiving a gentle chiropractic adjustment at Toledo Holistic Healthcare">
+    {testimonials.length > 0 && (
+      <p>
+        Hear from real patients who have experienced the difference of holistic, patient-centered care at Toledo Holistic Healthcare.
+      </p>
+    )}
   </PageHero>
 
-  <section class="section-padding bg-white">
-    <div class="container-narrow">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {testimonials.map((t) => <TestimonialCard quote={t.quote} author={t.author} />)}
+  {testimonials.length > 0 && (
+    <section class="section-padding bg-white">
+      <div class="container-narrow">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {testimonials.map((t) => <TestimonialCard quote={t.quote} author={t.author} />)}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <CTABanner />
 </BaseLayout>

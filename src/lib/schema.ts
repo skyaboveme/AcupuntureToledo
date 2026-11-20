@@ -34,9 +34,8 @@ export function clinicSchema(options: SchemaOptions = {}) {
     telephone: site.phoneTel,
     email: site.email,
     image: [
-      absoluteUrl('/images/tol-office.webp'),
-      absoluteUrl('/images/fam-002.webp'),
-      absoluteUrl(leadPractitioner.image),
+      absoluteUrl('/images/1920-chiro-004.webp'),
+      ...(leadPractitioner.image ? [absoluteUrl(leadPractitioner.image)] : []),
     ],
     logo: absoluteUrl('/images/logo2.webp'),
     address: {
@@ -90,36 +89,16 @@ export function clinicSchema(options: SchemaOptions = {}) {
 }
 
 export function physicianSchema() {
-  return {
+  // Steve: degree, license numbers, NPI, school, headshot, and profile URL stay off this
+  // schema until they are supplied for Dr. Allen Beck. knowsAbout is the clinic's existing topic list.
+  const physician: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Physician',
     '@id': `${site.url}/#physician`,
     name: leadPractitioner.name,
-    jobTitle: 'Doctor of Chiropractic',
+    jobTitle: leadPractitioner.role,
     medicalSpecialty: ['Chiropractic', 'Acupuncture'],
-    image: absoluteUrl(leadPractitioner.image),
     url: `${site.url}/about`,
-    license: leadPractitioner.licenses.map(
-      (license) => `${license.state} ${license.name} license ${license.number}`
-    ),
-    identifier: {
-      '@type': 'PropertyValue',
-      name: 'NPI',
-      value: leadPractitioner.npi,
-    },
-    hasCredential: leadPractitioner.licenses.map((license) => ({
-      '@type': 'EducationalOccupationalCredential',
-      credentialCategory: license.name,
-      recognizedBy: {
-        '@type': 'Organization',
-        name: `State of ${license.state}`,
-      },
-      identifier: license.number,
-    })),
-    alumniOf: {
-      '@type': 'CollegeOrUniversity',
-      name: leadPractitioner.education.school,
-    },
     worksFor: {
       '@type': 'MedicalClinic',
       '@id': `${site.url}/#organization`,
@@ -133,8 +112,13 @@ export function physicianSchema() {
       'Neck Pain',
       'Prenatal Chiropractic',
     ],
-    sameAs: ['https://www.healthgrades.com/providers/jared-mainous-afrhelu037'],
   };
+
+  if (leadPractitioner.image) {
+    physician.image = absoluteUrl(leadPractitioner.image);
+  }
+
+  return physician;
 }
 
 export function serviceSchema(service: { name: string; description: string; slug: string }) {
