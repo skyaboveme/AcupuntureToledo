@@ -89,8 +89,9 @@ export function clinicSchema(options: SchemaOptions = {}) {
 }
 
 export function physicianSchema() {
-  // Steve: degree, license numbers, NPI, school, headshot, and profile URL stay off this
-  // schema until they are supplied for Dr. Allen Beck. knowsAbout is the clinic's existing topic list.
+  // Steve: degree, license numbers, NPI, school, and profile URL stay off this
+  // schema until they are supplied for Dr. Allen Beck. The headshot is the photo Steve provided.
+  // knowsAbout is the clinic's existing topic list.
   const physician: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Physician',

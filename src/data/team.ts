@@ -4,8 +4,8 @@ export const team = [
     role: 'Chiropractor / Acupuncturist',
     slug: 'allen-beck',
     isPrimary: true,
-    // Steve: add a real headshot. Do not use fam-002.webp or fam-003.webp — those are the previous doctor's family.
-    image: '',
+    // Photo supplied by Steve. Do not swap in a generated face, or fam-002.webp / fam-003.webp (previous doctor's family).
+    image: '/images/dr-allen-beck.jpg',
     // Steve: supply a biography, degree, school, license numbers, and NPI.
     // The previous doctor's school, license numbers, NPI, and review-based reputation lines were removed
     // so they are not stated as Dr. Allen Beck's.

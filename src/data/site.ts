@@ -19,10 +19,11 @@ export const site = {
     latitude: 41.677592,
     longitude: -83.612074,
   },
-  // Steve: add Dr. Allen Beck's own profile URLs. The previous Healthgrades page was the prior doctor's and was removed.
+  // Clinic Facebook page. Steve: add Dr. Allen Beck's own profile URLs. The previous Healthgrades page was the prior doctor's and was removed.
+  facebook: 'https://www.facebook.com/ToledoHolisticHealthcare',
   sameAs: [
     'https://maps.app.goo.gl/zV1mEEvmJ9atMQhM9',
-    'https://www.facebook.com/158820987485914',
+    'https://www.facebook.com/ToledoHolisticHealthcare',
   ],
   googleReviews: {
     ratingValue: '4.7',
