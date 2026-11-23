@@ -62,7 +62,7 @@ Legacy `.php` URLs from the previous site redirect to the matching new routes.
 
 ### 1. Photos
 
-Clinic photos from the previous site are in `public/images/` and used on home, about, services, conditions, locations, contact, billing, FAQ, and testimonials. `fam-002.webp`, `fam-003.webp`, and `tol-office.webp` were removed from `public/images/`: the family photos are the previous doctor's, and the exterior photo shows his name on the red awning. The about page uses a photo placeholder until Steve supplies a headshot and a new exterior photo.
+Clinic photos from the previous site are in `public/images/` and used on home, about, services, conditions, locations, contact, billing, FAQ, and testimonials. `fam-002.webp`, `fam-003.webp`, and `tol-office.webp` were removed from `public/images/`: the family photos are the previous doctor's, and the exterior photo shows his name on the red awning. The about page uses Steve's photo of Dr. Allen Beck (`public/images/dr-allen-beck.jpg`). A new exterior photo is still needed.
 
 ### 2. Wire Up Contact Form
 
@@ -80,7 +80,7 @@ Change `FORM_ACTION` in `ContactForm.astro` from `'#'` to your endpoint URL.
 - **Insurance panel list** — general statement only; add named carriers after Lori confirms the panel
 - **Pricing** — not provided; no fee schedule included
 - **Social profiles** — schema `sameAs` includes Google Maps and Facebook. Healthgrades, Instagram, and WebMD stay omitted until a verified profile URL exists
-- **Dr. Allen Beck headshot, biography, degree, licenses, and NPI** — not published. Do not reuse the previous doctor's school, license numbers, NPI, Healthgrades profile, family photos, or patient quotes.
+- **Dr. Allen Beck biography, degree, licenses, and NPI** — not published. His photo is on the About page. Do not reuse the previous doctor's school, license numbers, NPI, Healthgrades profile, family photos, or patient quotes.
 
 ## SEO & Structured Data
 
@@ -99,7 +99,7 @@ Change `FORM_ACTION` in `ContactForm.astro` from `'#'` to your endpoint URL.
 ### Schema.org JSON-LD
 - **MedicalClinic / MedicalBusiness / LocalBusiness** on all pages (NAP, geo, hours, `sameAs`, `hasOfferCatalog`)
 - **aggregateRating** from Google (4.7 / 33) — do not invent additional ratings
-- **Physician** for Dr. Allen Beck (name and role only until degree, licenses, NPI, school, headshot, and profile URL are supplied)
+- **Physician** for Dr. Allen Beck (name, role, and the photo Steve supplied; degree, licenses, NPI, school, and profile URL stay off until supplied)
 - **MedicalProcedure** on each service page
 - **MedicalWebPage** on each condition page
 - **FAQPage** on `/faq`, home, billing, and every service and condition page
